@@ -1,10 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Kanit } from 'next/font/google'
 import Nav from '@/components/organisms/Nav/Nav.component'
 import Footer from '@/components/organisms/Footer/Footer.component'
 
-const inter = Inter({ subsets: ['latin'] })
+const kanit = Kanit({ subsets: ["latin"], weight: ["400", "700"]})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={kanit.className}>
         <Nav />
         {children}
         <Footer />
