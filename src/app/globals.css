@@ -31,7 +31,7 @@ body {
   .title-clamp {
     line-height: 1;
     font-size: 3rem;
-    font-size: clamp(1rem,5vw,3rem);
+    font-size: clamp(1rem,4vw,3rem);
   }
 }
 
@@ -46,4 +46,11 @@ body {
   bottom: 0;
   background-repeat: no-repeat;
   z-index:15;
+}
+
+.picture-img-wrap{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
 }

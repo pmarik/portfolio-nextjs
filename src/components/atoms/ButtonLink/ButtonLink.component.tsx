@@ -64,7 +64,7 @@ const ButtonLink: React.FC<ButtonProps> = ({
             href={to}
             target="_blank"
         >
-            <span className=" text-slate-50 py-4 px-16 border
+            <span className=" text-slate-50 py-2 px-6 md:py-4 md:px-16 border
               relative
               block
                  
