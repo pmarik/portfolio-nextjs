@@ -25,3 +25,32 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+@layer utilities {
+  .title-clamp {
+    line-height: 1;
+    font-size: 3rem;
+    font-size: clamp(1rem,4vw,3rem);
+  }
+}
+
+.jagged-after::after{
+  position: absolute;
+  content: '';
+  background-image: url('/jagged.svg');
+  background-position-y:bottom;
+  width: 100%;
+  height: 50px;
+  display:block;
+  bottom: 0;
+  background-repeat: no-repeat;
+  z-index:15;
+}
+
+.picture-img-wrap{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
+}

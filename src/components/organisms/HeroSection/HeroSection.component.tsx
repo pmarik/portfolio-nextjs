@@ -1,13 +1,15 @@
 import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
 import Image from 'next/image'
+import Orangebg from '@/assets/orange-jagged.svg'
+import heroImg from 'public/paul-hero-4.png'
 
 const HeroSection:React.FC = () => {
     return (
-        <div className="flex justify-between w-full h-screen bg-hero-img bg-cover px-20 pt-36">
-            <div className="space-y-5 max-w-prose">
-                <h1 className="text-5xl font-bold">Full-Stack Development & User-Centered Design</h1>
-                <p>I work with innovators to create and enhance websites that amplify business growth</p>
-                <div className="flex">
+        <div className="relative grid overflow-hidden grid-cols-1 md:grid-cols-12 grid-rows-6 w-full h-[105vh] bg-dark-gradient bg-cover pl-6 md:pl-20 pt-5 md:pt-36 lg:px-20 min-h-[600px] jagged-after">
+            <div className=" max-w-prose row-start-2 col-start-1 col-end-7 z-20 pr-6 md:pr-[unset]">
+                <h1 className="text-2xl md:title-clamp font-bold tracking-widest mt-4 text-center md:text-left">Full-Stack Development & User-Centered Design</h1>
+                <p className="mt-6 text-center md:text-left" >I work with innovators to create and enhance websites that amplify business growth</p>
+                <div className="flex space-x-8 mt-7">
                     <ButtonLink
                         to="#projects"
                         display="primary"
@@ -22,17 +24,20 @@ const HeroSection:React.FC = () => {
                     </ButtonLink>
                 </div>
             </div>
-            <div className="relative w-full">
+            <div className="relative w-full z-10 col-start-1 md:col-start-6 col-end-13 row-start-4 md:row-start-1 row-end-7">
                 <Image
-                    src="/marik-tech-hero.png"
+                    src={heroImg}
                     alt="Marik Tech Hero Image"
-                    // width={467}
-                    // height={488}
                     fill={true}
                     priority
-                    className="object-contain"
+                    quality={100}
+                    className="object-cover object-left-top"
+                    sizes="50vw"
+                    // unoptimized
                 />
             </div>
+            <Orangebg className="absolute w-full  bottom-[-30%] md:bottom-[unset] md:top-0 right-0 rotate-90 md:rotate-[unset] md:h-[105vh] md:w-[42vw]"/>
+            <div className="border-r border-white z-10 h-2/3 col-end-13 row-start-1 row-end-7"/>
         </div>
     )
 }

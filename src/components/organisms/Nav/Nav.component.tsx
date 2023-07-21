@@ -3,14 +3,20 @@ import NavLinks from '@/components/molecules/NavLinks/NavLinks.component'
 
 const Nav:React.FC = () => {
     return (
-        <div className="w-full bg-gray-400 flex justify-between px-20 py-4">
-            <Image
-                src="/logo-script.svg"
-                alt="Marik Tech logo"
-                width={150}
-                height={24}
-                priority
-            />
+        <div className="w-full absolute flex justify-between px-6 md:px-20 py-10 z-20">
+            <div 
+                className="picture-img-wrap w-[40px] md:w-[unset]"
+            >
+                <picture>
+                    <source type="image/svg+xml" srcSet='/logoSmall.svg' media="(max-width: 768px)" />
+                    <Image
+                        src="/logo-script.svg"
+                        alt="Marik Tech logo"
+                        width={150}
+                        height={24}
+                    />
+                </picture>
+            </div>
             <NavLinks/>
         </div>
     )

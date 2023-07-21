@@ -29,15 +29,58 @@ const ButtonLink: React.FC<ButtonProps> = ({
 }) => {
 
    
+    // return (
+    //     <Link
+    //         className={`border shadow-md max-w-xl rounded-sm bg-main-color-400 py-4 px-12 text-slate-950 hover:bg-color-500 transition-colors 
+    //             ${getBtnDisplay(display)}
+    //         `}
+    //         href={to}
+    //         target="_blank"
+    //     >
+    //         <span className="font-bold text-slate-50 ">{children}</span>
+    //     </Link>
+    // )
+
+
+    // before:border-4
+    // before:absolute
+    // before:w-[30px]
+    // before:h-[30px]
+    // before:bg-transparent
+    // before:top-[-7px]
+    // before:left-[-7px]
+    // before:border-transparent
+    // before:border-t-indigo-500
+    // before:border-l-indigo-500
+    // before:duration-500
+
+
     return (
         <Link
-            className={`shadow-md max-w-xl rounded-sm bg-main-color-400 py-4 px-12 text-slate-950 hover:bg-color-500 transition-colors 
+            className={`
+              
                 ${getBtnDisplay(display)}
             `}
             href={to}
             target="_blank"
         >
-            <span className="font-bold text-slate-50 ">{children}</span>
+            <span className=" text-slate-50 py-2 px-6 md:py-4 md:px-16 border
+              relative
+              block
+                 
+              after:border-2
+              after:absolute
+              after:w-[20px]
+              after:h-[20px]
+              after:bg-transparent
+              after:right-[5px]
+              after:bottom-[5px]
+              after:border-transparent
+              after:border-r-white
+              after:border-b-white
+              after:duration-500
+            
+            ">{children}</span>
         </Link>
     )
 }
