@@ -68,3 +68,32 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+
+.phoneGraphic_svg__bouncy-anim{
+  animation-duration: 4s;
+  -webkit-animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-name: bouncy;
+  -webkit-animation-name: bouncy;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.520, 1);
+}
+
+.phoneGraphic_svg__bouncy-anim.phoneGraphic_svg__design-anim{
+    animation-delay: 0.25s;
+    -webkit-animation-delay: 0.25s;
+}
+.phoneGraphic_svg__bouncy-anim.phoneGraphic_svg__rocket-anim{
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+}
+
+@keyframes bouncy{
+    0% {transform: translateY(0);}
+    20% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    50% {transform: translateY(0);}
+    60% {transform: translateY(-10px);}
+    80% {transform: translateY(0);}
+    100% {transform: translateY(0);}
+}
