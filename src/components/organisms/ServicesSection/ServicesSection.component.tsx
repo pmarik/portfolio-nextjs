@@ -6,15 +6,15 @@ import RevealOnScroll from '@/components/atoms/RevealOnScroll/RevealOnScroll.com
 
 const ServicesSection:React.FC = () => {
     return (
-        <div className="w-full py-12 px-20 flex justify-between">
-            <div className="w-1/2 pr-6  sticky top-20 h-min">
+        <div className="w-full pt-12 pb-[7rem] px-8 md:px-20 md:flex justify-between bg-cover bg-dark-gradient">
+            <div className="md:w-1/2 md:pr-6  md:sticky top-20 h-min">
                 <p className="text-xl text-color-300 mt-16">For hire.</p>
-                <h2 className="title-clamp mb-4">Services</h2>
-                <p>Your site, your brand. Experience what a personalized online presence can do for your business. I make your ideas a reality with the following focus:</p>
-                <div className="border-l border-white z-10 h-[200px] col-end-13 row-start-1 row-end-7 mt-7"/>
+                <h2 className="text-2xl md:title-clamp mb-4">Services</h2>
+                <p className="leading-relaxed">Your site, your brand. Experience what a personalized online presence can do for your business. I make your ideas a reality with the following focus:</p>
+                <div className="border-l border-white z-10 h-[100px] md:h-[200px] col-end-13 row-start-1 row-end-7 mt-7"/>
 
             </div>
-            <div className="w-[40%] mt-16 ml-8 mb-20 " >
+            <div className="md:w-[40%] mt-16 md:ml-8 mb-20 leading-relaxed" >
 
                 <RevealOnScroll className='h-[200px] mb-24'>
                     <CodeIcon />

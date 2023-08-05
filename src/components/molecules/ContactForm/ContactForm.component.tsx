@@ -108,8 +108,8 @@ const ContactForm:React.FC = () => {
          <form 
             onSubmit={handleSubmit(onSubmit)} 
             className="
-            col-start-7 col-end-13 row-start-2 row-span-3
-            flex flex-col text-slate-950 p-8 bg-slate-400 bg-opacity-10 rounded-xl"
+            row-start-4 md:col-start-7 md:col-end-13 md:row-start-2 md:row-span-4
+            flex flex-col text-slate-950 p-8 bg-slate-400 bg-opacity-10 rounded-xl leading-relaxed"
             name="Contact Form" 
             method="POST" 
             data-netlify="true" 
@@ -126,19 +126,20 @@ const ContactForm:React.FC = () => {
             </div>
 
             <label htmlFor={'name'}>
-                    <span className="form-label-text">Name</span>
+                    <span className="form-label-text text-white">Name</span>
                     <input 
                         {...register('name', {required: true })}
                         placeholder="enter your name" 
                         aria-label="Enter Name"
+                        className="w-full rounded p-2 mt-1 mb-5"
                     />
                     {errors.name && <p className="text-red-600">Last name is required.</p>}
             </label>
 
             <label htmlFor={'email'}>
-                    <span className="form-label-text">Email</span>
+                    <span className="form-label-text text-white">Email</span>
                     <input 
-                        className="mt-8"
+                        className="w-full rounded p-2 mt-1 mb-5"
                         {...register('email', {required: true, pattern: {
                             value: /\S+@\S+\.\S+/,
                             message: "Entered value does not match email format"
@@ -150,20 +151,20 @@ const ContactForm:React.FC = () => {
                     {errors.email && <p className="text-red-600">Please enter a valid email address</p>}
             </label>
 
-            <label htmlFor={'message'} className='textarea-wrap mt-8'>
-                    <span className="form-label-text">
+            <label htmlFor={'message'} className='textarea-wrap '>
+                    <span className="form-label-text text-white">
                         Message 
                         {/* {state.pricingText && (<span className="pricing-text"> ({state.pricingText})</span>)} */}
                     </span>
                     <textarea
-                        className="mb-8"
+                        className="mb-8 w-full rounded h-[200px] max-h-[250px]"
                         {...register('message', {required: true})}
                         placeholder="type your message" 
                         aria-label="Type Message"
                     />
             </label>
 
-            <button type="submit">SUBMIT</button>
+            <button type="submit" className='bg-white'>SUBMIT</button>
         </form>
     )
 }
