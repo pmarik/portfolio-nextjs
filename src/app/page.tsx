@@ -1,7 +1,7 @@
 import HeroSection from '@/components/organisms/HeroSection/HeroSection.component'
 import ProjectsSection from '@/components/organisms/ProjectsSection/ProjectsSection.component'
 import ServicesSection from '@/components/organisms/ServicesSection/ServicesSection.component'
-import QuoteSection from '@/components/organisms/QuoteSection/QuoteSection.component'
+import ReviewSection from '@/components/organisms/ReviewSection/ReviewSection.component'
 
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <HeroSection />
       <ProjectsSection />
       <ServicesSection />
-      <QuoteSection />
+      <ReviewSection />
     </main>
   )
 }
