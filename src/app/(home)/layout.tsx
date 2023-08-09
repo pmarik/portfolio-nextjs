@@ -1,4 +1,4 @@
-import './globals.css'
+import '../globals.css'
 import type { Metadata } from 'next'
 import { Kanit } from 'next/font/google'
 import Nav from '@/components/organisms/Nav/Nav.component'
@@ -14,12 +14,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
 }) {
+
+
   return (
     <html lang="en">
       <body className={kanit.className}>
-        <Nav />
+        <Nav classNames='bg-transparent'/>
         {children}
         <Footer />
       </body>

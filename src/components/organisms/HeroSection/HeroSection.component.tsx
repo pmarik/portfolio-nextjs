@@ -5,7 +5,7 @@ import heroImg from 'public/paul-hero-4.png'
 
 const HeroSection:React.FC = () => {
     return (
-        <div className="relative grid overflow-hidden grid-cols-1 md:grid-cols-12 grid-rows-6 w-full h-[105vh] bg-dark-gradient bg-cover pl-6 md:pl-20 pt-5 md:pt-36 lg:px-20 min-h-[600px] jagged-after">
+        <div className="relative grid overflow-hidden grid-cols-1 md:grid-cols-12 grid-rows-6 w-full h-[105vh] bg-dark-gradient bg-cover pl-6 md:pl-10 lg:pl-20 pt-5 md:pt-36 lg:px-20 min-h-[600px] jagged-after">
             <div className=" max-w-prose row-start-2 col-start-1 col-end-7 z-20 pr-6 md:pr-[unset]">
                 <h1 className="text-2xl md:title-clamp font-bold tracking-widest mt-4 text-center md:text-left">Full-Stack Development & User-Centered Design</h1>
                 <p className="mt-5 text-center md:text-left leading-relaxed" >I work with innovators to create and enhance websites that amplify business growth</p>

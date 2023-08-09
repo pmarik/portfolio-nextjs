@@ -16,9 +16,10 @@ const NavLinks:React.FC = () => {
           behavior: "smooth",
         });
       };
+    
 
     return (
-        <nav className="space-x-4 md:space-x-12 text-lg">
+        <nav className="space-x-2 md:space-x-4 lg:space-x-12 text-lg">
             <Link href='/'>Home</Link>
             <Link href='/portfolio'>Portfolio</Link>
             <a href='#contact' tabIndex={0} onClick={handleScroll}>Contact</a>

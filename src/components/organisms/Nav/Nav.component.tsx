@@ -1,9 +1,15 @@
 import Image from 'next/image'
 import NavLinks from '@/components/molecules/NavLinks/NavLinks.component'
 
-const Nav:React.FC = () => {
+type NavProps = {
+    classNames: string
+}
+
+const Nav:React.FC<NavProps> = ({
+    classNames
+}) => {
     return (
-        <div className="w-full absolute flex justify-between px-6 md:px-20 py-10 z-20">
+        <div className={`w-full absolute flex justify-between px-6 md:px-10 lg:px-20 py-10 z-20 ${classNames}`}>
             <div 
                 className="picture-img-wrap w-[40px] md:w-[unset]"
             >

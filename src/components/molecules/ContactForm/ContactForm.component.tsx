@@ -3,6 +3,8 @@ import { useRef } from 'react'
 import Link from "next/link"
 import { useForm, SubmitHandler} from 'react-hook-form';
 import axios from 'axios'
+import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
+
 
 type Inputs = {
     name: string
@@ -108,7 +110,7 @@ const ContactForm:React.FC = () => {
          <form 
             onSubmit={handleSubmit(onSubmit)} 
             className="
-            row-start-4 md:col-start-7 md:col-end-13 md:row-start-2 md:row-span-4
+            row-start-4 md:col-start-7 md:col-end-13 md:row-start-2 md:row-span-5
             flex flex-col text-slate-950 p-8 bg-slate-400 bg-opacity-10 rounded-xl leading-relaxed"
             name="Contact Form" 
             method="POST" 
@@ -164,7 +166,13 @@ const ContactForm:React.FC = () => {
                     />
             </label>
 
-            <button type="submit" className='bg-white'>SUBMIT</button>
+            {/* <button type="submit" className='bg-white'>SUBMIT</button> */}
+            <ButtonLink
+                to="#projects"
+                display="primary"
+            >
+                submit
+            </ButtonLink>
         </form>
     )
 }

@@ -15,11 +15,11 @@ const Carousel:React.FC<CarouselProps> = ({
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, containScroll: 'trimSnaps' }, [Autoplay()])
 
     
-    useEffect(() => {
-        if (emblaApi) {
-        console.log(emblaApi.slideNodes()) // Access API
-        }
-    }, [emblaApi])
+    // useEffect(() => {
+    //     if (emblaApi) {
+    //     console.log(emblaApi.slideNodes()) // Access API
+    //     }
+    // }, [emblaApi])
 
     const onButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
         const { autoplay } = emblaApi.plugins()
