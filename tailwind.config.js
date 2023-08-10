@@ -25,6 +25,12 @@ module.exports = {
         'theme': 'linear-gradient(90deg, #F90 0%, #D64D00 100%);',
         'smudge': "url('/images/smudge.jpg')"
       },
+      maxWidth: {
+        'maximum': '2500px'
+      },
+      minWidth: {
+        'minimum': '350px'
+      }
     },
   },
   plugins: [],

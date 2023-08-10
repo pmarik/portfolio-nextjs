@@ -1,8 +1,12 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from 'next/navigation';
+
 
 const NavLinks:React.FC = () => {
+
+    const currentRoute = usePathname();
 
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         // first prevent the default behavior
@@ -20,8 +24,8 @@ const NavLinks:React.FC = () => {
 
     return (
         <nav className="space-x-2 md:space-x-4 lg:space-x-12 text-lg">
-            <Link href='/'>Home</Link>
-            <Link href='/portfolio'>Portfolio</Link>
+            <Link href='/' className={currentRoute === "/" ? "border-b-2 border-white": ""}>Home</Link>
+            <Link href='/portfolio' className={currentRoute === "/portfolio" ? "border-b-2 border-white": ""}>Portfolio</Link>
             <a href='#contact' tabIndex={0} onClick={handleScroll}>Contact</a>
         </nav>
     )

@@ -5,7 +5,7 @@ import Carousel from '@/components/molecules/Carousel'
 
 const ReviewSection:React.FC = () => {
     return (
-        <div className="relative w-full py-12 md:py-40 px-6 md:px-10 lg:px-20 md:flex justify-between bg-white">
+        <div className="relative w-full py-12 md:py-40 px-6 md:px-10 lg:px-20 md:flex justify-between bg-white max-w-maximum  min-w-minimum ">
             <QuoteGraphic className="absolute left-0 top-[6rem]"/>
             <div className="md:flex mt-20 mb-5 text-slate-950 relative z-10 w-full ">
                 <div className="md:w-1/2 leading-relaxed"> 

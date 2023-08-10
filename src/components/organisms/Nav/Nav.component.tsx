@@ -9,7 +9,7 @@ const Nav:React.FC<NavProps> = ({
     classNames
 }) => {
     return (
-        <div className={`w-full absolute flex justify-between px-6 md:px-10 lg:px-20 py-10 z-20 ${classNames}`}>
+        <div className={`w-full absolute flex justify-between px-6 md:px-10 lg:px-20 py-10 z-20 max-w-maximum  min-w-minimum m-[0_auto] ${classNames}`}>
             <div 
                 className="picture-img-wrap w-[40px] md:w-[unset]"
             >
