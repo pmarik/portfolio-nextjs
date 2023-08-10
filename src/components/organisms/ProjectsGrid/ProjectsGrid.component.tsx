@@ -9,8 +9,8 @@ import viewerImg from 'public/viewer-square.jpg'
 
 const ProjectsGrid:React.FC = () => {
     return (
-        <div className="relative bg-white w-full px-6 md:px-10 lg:px-20 text-center md:text-left max-w-maximum  min-w-minimum 
-            grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-[20px] object-cover mt-[200px]
+        <div className="relative bg-white w-full px-6 md:px-10 lg:px-40 text-center md:text-left max-w-maximum  min-w-minimum 
+            grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-[20px] object-cover py-40 h-full lg:max-w-[1270px]
         ">
             <div className=" bg-white">
                 <Image

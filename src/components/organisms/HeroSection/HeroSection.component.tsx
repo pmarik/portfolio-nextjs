@@ -13,12 +13,14 @@ const HeroSection:React.FC = () => {
                     <ButtonLink
                         to="#projects"
                         display="primary"
+                        variant={'main'}
                     >
                         See my work
                     </ButtonLink>
                     <ButtonLink
                         to="#services"
                         display="secondary"
+                        variant={'default'}
                     >
                         View Services
                     </ButtonLink>

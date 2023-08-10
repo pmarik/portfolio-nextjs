@@ -12,7 +12,7 @@ interface CarouselProps {
 const Carousel:React.FC<CarouselProps> = ({
     children
 }) => {
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, containScroll: 'trimSnaps' }, [Autoplay()])
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, containScroll: 'trimSnaps' }, [Autoplay({delay: 10000})])
 
     
     // useEffect(() => {
