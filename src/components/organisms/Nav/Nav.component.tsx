@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Link from 'next/link'
 import NavLinks from '@/components/molecules/NavLinks/NavLinks.component'
 
 type NavProps = {
@@ -13,15 +13,15 @@ const Nav:React.FC<NavProps> = ({
             <div 
                 className="picture-img-wrap w-[40px] md:w-[unset]"
             >
-                <picture>
-                    <source type="image/svg+xml" srcSet='/logoSmall.svg' media="(max-width: 768px)" />
-                    <Image
-                        src="/logo-script.svg"
-                        alt="Marik Tech logo"
-                        width={150}
-                        height={24}
-                    />
-                </picture>
+ 
+                <Link href='/' className="logoBig" >
+                    <img src='./logo-script.svg'  alt="Marik Tech" width="150px" height="24px"/>
+                </Link>
+
+                <Link href='/' className="logoSmall" >
+                    <img src='./logoSmall.svg' alt="Marik Tech" width="40px" height="28px" />
+                </Link>
+            
             </div>
             <NavLinks/>
         </div>
