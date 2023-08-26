@@ -1,39 +1,34 @@
 import Image from 'next/image'
-// import { ExternalButtonLink } from "@/components/atoms/ButtonLink/ButtonLink.component"
-import ButtonLink, { ExternalButtonLink, buttonVariants } from "@/components/atoms/ButtonLink/ButtonLink.component"
-import lucidworksImg from 'public/project-imgs/lucidworks-project.jpg'
+import { ExternalButtonLink } from "@/components/atoms/ButtonLink/ButtonLink.component"
+import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
+import tradetrackerImg from 'public/project-imgs/trade-tracker-project.jpg'
 
-export default function Lucidworks() {
+export default function tradetracker() {
   return (
       <main className="flex min-h-screen flex-col items-center justify-between pt-32 md:pt-40 text-black">
         <div className=" px-6 md:px-10 lg:px-20">
           <div className="flex flex-col justify-between lg:flex-row-reverse">
             <div>
               <Image
-                  src={lucidworksImg}
-                  alt='lucidworks img'
+                  src={tradetrackerImg}
+                  alt='tradetracker img'
                   className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 lg:pl-8 md:w-full "
               />
             </div>
           
             {/* <ProjectHero> */}
               <div className="mt-8 lg:mt-[unset] lg:mr-8 lg:w-[40%]">
-                <h1 className="text-2xl md:title-clamp md:mt-8">Lucidworks</h1>
+                <h1 className="text-2xl md:title-clamp md:mt-8">Trade Tracker</h1>
                 <section>
                   <h2 className="bg-[#333] text-color-300 pl-4 mt-8">About</h2>
-                  <p className="my-8 ml-4">Revamp of Lucidworks documenation site. Interactive documentation built upon Gatsby.js sourced from asciidoc files and powered by internal tools from Lucidworks.</p>
+                  <p className="my-8 ml-4">Tracker Tracker is a project that aims to automate the tedious task of analyzing personal capital investments. Through interactive charts, notes, and habit-forming psychology, the project guides a user to steady consistency and performance in the markets.</p>
                   <ExternalButtonLink
-                      to="www.doc.lucidworks.com"
+                      to="www.doc.tradetracker.com"
                       display="primary"
                       variant={'whiteMain'}
                   >
                       View site
                   </ExternalButtonLink>
-                  {/* <a 
-                      href="www.doc.lucidworks.com" 
-                      target="_blank" 
-                      className={buttonVariants({variant: "whiteMain"})}
-                  >View Site</a> */}
                 </section>
                 <section>
                 <h2 className="bg-[#333] text-color-300 pl-4 mt-8">Tech</h2>
@@ -66,7 +61,7 @@ export default function Lucidworks() {
                 </q>
                 <p className="relative z-10">Dustin Guericke
                   <br/>
-                  Director of Product Documentation at Lucidworks
+                  Director of Product Documentation at tradetracker
                 </p>
               </section>
           {/* </ReviewSection> */}

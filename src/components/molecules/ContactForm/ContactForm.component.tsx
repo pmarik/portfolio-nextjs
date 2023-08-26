@@ -159,7 +159,7 @@ const ContactForm:React.FC = () => {
                         {/* {state.pricingText && (<span className="pricing-text"> ({state.pricingText})</span>)} */}
                     </span>
                     <textarea
-                        className="mb-8 w-full rounded h-[200px] max-h-[250px]"
+                        className="mb-8 w-full p-2 rounded h-[200px] max-h-[250px]"
                         {...register('message', {required: true})}
                         placeholder="type your message" 
                         aria-label="Type Message"

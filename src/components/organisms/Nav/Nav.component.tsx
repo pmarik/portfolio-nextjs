@@ -3,23 +3,24 @@ import NavLinks from '@/components/molecules/NavLinks/NavLinks.component'
 
 type NavProps = {
     classNames: string
+    baseUrl: string
 }
 
 const Nav:React.FC<NavProps> = ({
-    classNames
+    classNames,
+    baseUrl
 }) => {
     return (
         <div className={`w-full absolute flex justify-between px-6 md:px-10 lg:px-20 py-8 z-20 max-w-maximum  min-w-minimum m-[0_auto] ${classNames}`}>
             <div 
                 className="picture-img-wrap w-[40px] md:w-[unset]"
             >
- 
                 <Link href='/' className="logoBig" >
-                    <img src='./logo-script.svg'  alt="Marik Tech" width="150px" height="24px"/>
+                    <img src={`${baseUrl}/svgs/logo-script.svg`}  alt="Marik Tech" width="150px" height="24px"/>
                 </Link>
 
                 <Link href='/' className="logoSmall" >
-                    <img src='./logoSmall.svg' alt="Marik Tech" width="40px" height="28px" />
+                    <img src={`${baseUrl}/svgs/logoSmall.svg`}alt="Marik Tech" width="40px" height="28px" />
                 </Link>
             
             </div>

@@ -20,12 +20,14 @@ const NavLinks:React.FC = () => {
           behavior: "smooth",
         });
       };
+
     
+      const matchRoute = currentRoute.startsWith("/portfolio")
 
     return (
         <nav className="space-x-2 md:space-x-4 lg:space-x-12 text-lg">
-            <Link href='/' className={currentRoute === "/" ? "border-b-2 border-white": ""}>Home</Link>
-            <Link href='/portfolio' className={currentRoute === "/portfolio" ? "border-b-2 border-white": ""}>Portfolio</Link>
+            <Link href='/' className={currentRoute === "/" ? "border-b border-white": ""}>Home</Link>
+            <Link href='/portfolio' className={matchRoute ? "border-b border-color-300": ""}>Portfolio</Link>
             <a href='#contact' tabIndex={0} onClick={handleScroll}>Contact</a>
         </nav>
     )

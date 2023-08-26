@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kanit.className}>
-        <Nav classNames='bg-transparent'/>
+        <Nav classNames='bg-transparent' baseUrl="."/>
         {children}
         <Footer />
       </body>

@@ -12,18 +12,18 @@ module.exports = {
         'color-200': '#98FAE7',
         'color-300': '#FF9900',
         'color-400': '#D64D00',
-        'color-500': '#119B81',
+        'color-500': '#DF8A0D',
         'color-600': '#186E5F',
         'color-700': '#164B4C',
         'light-150': '#D0FbFC'
       },
       backgroundImage: {
-        'hero-img': "url('/images/hero-bg.jpg')",
+        'hero-img': "url('/graphic-images/hero-bg.jpg')",
         'dark-gradient': "linear-gradient(26deg, #000 0%, #2E1900 100%);",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'theme': 'linear-gradient(90deg, #F90 0%, #D64D00 100%);',
-        'smudge': "url('/images/smudge.jpg')"
+        'smudge': "url('/graphic-images/smudge.jpg')"
       },
       maxWidth: {
         'maximum': '2500px'

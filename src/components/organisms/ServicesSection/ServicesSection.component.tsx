@@ -6,7 +6,7 @@ import RevealOnScroll from '@/components/atoms/RevealOnScroll/RevealOnScroll.com
 
 const ServicesSection:React.FC = () => {
     return (
-        <div className="w-full pt-12 pb-[7rem] px-6 md:px-10 lg:px-20 md:flex justify-between bg-cover bg-dark-gradient max-w-maximum  min-w-minimum ">
+        <div id="services" className="w-full pt-12 pb-[7rem] px-6 md:px-10 lg:px-20 md:flex justify-between bg-cover bg-dark-gradient max-w-maximum  min-w-minimum ">
             <div className="md:w-1/2 md:pr-6  md:sticky top-20 h-min">
                 <p className="text-xl text-color-300 mt-16">For hire.</p>
                 <h2 className="text-2xl md:title-clamp mb-4">Services</h2>

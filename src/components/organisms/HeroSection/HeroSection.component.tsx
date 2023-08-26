@@ -19,14 +19,14 @@ const HeroSection:React.FC = () => {
                 <div 
                     className="flex space-x-8 mt-11 justify-center md:justify-start">
                         <ButtonLink
-                            to="#projects"
+                            to="/#projects"
                             display="primary"
                             variant={'main'}
                         >
                             See my work
                         </ButtonLink>
                         <ButtonLink
-                            to="#services"
+                            to="/#services"
                             display="secondary"
                             variant={'default'}
                         >

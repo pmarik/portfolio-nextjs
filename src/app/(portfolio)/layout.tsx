@@ -21,7 +21,7 @@ export default function Layout({
   return (
     <html lang="en">
       <body className={kanit.className}>
-        <Nav classNames='bg-dark-gradient'/>
+        <Nav classNames='bg-dark-gradient' baseUrl=".."/>
         {children}
         <Footer />
       </body>
