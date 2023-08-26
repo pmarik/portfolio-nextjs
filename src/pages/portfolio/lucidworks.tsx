@@ -1,9 +1,13 @@
+import type { ReactElement } from 'react'
+import type { NextPageWithLayout } from '../_app'
+import Link from "next/link";
+import { LayoutPortfolio } from '@/components/organisms/Layout'
 import Image from 'next/image'
 // import { ExternalButtonLink } from "@/components/atoms/ButtonLink/ButtonLink.component"
 import ButtonLink, { ExternalButtonLink, buttonVariants } from "@/components/atoms/ButtonLink/ButtonLink.component"
 import lucidworksImg from 'public/project-imgs/lucidworks-project.jpg'
 
-export default function Lucidworks() {
+function Lucidworks<NextPageWithLayout>() {
   return (
       <main className="flex min-h-screen flex-col items-center justify-between pt-32 md:pt-40 text-black">
         <div className=" px-6 md:px-10 lg:px-20">
@@ -22,18 +26,21 @@ export default function Lucidworks() {
                 <section>
                   <h2 className="bg-[#333] text-color-300 pl-4 mt-8">About</h2>
                   <p className="my-8 ml-4">Revamp of Lucidworks documenation site. Interactive documentation built upon Gatsby.js sourced from asciidoc files and powered by internal tools from Lucidworks.</p>
-                  <ExternalButtonLink
+                  {/* <ExternalButtonLink
                       to="www.doc.lucidworks.com"
                       display="primary"
                       variant={'whiteMain'}
                   >
                       View site
-                  </ExternalButtonLink>
-                  {/* <a 
-                      href="www.doc.lucidworks.com" 
-                      target="_blank" 
-                      className={buttonVariants({variant: "whiteMain"})}
-                  >View Site</a> */}
+                  </ExternalButtonLink> */}
+                   <ButtonLink
+                        to="https://doc.lucidworks.com"
+                        display="primary"
+                        variant={'whiteMain'}
+                        target="_blank"
+                    >
+                      View Site
+                    </ButtonLink>
                 </section>
                 <section>
                 <h2 className="bg-[#333] text-color-300 pl-4 mt-8">Tech</h2>
@@ -95,3 +102,13 @@ export default function Lucidworks() {
       </main>
   )
 }
+
+Lucidworks.getLayout = function getLayout(page: ReactElement){
+  return (
+    <LayoutPortfolio>
+      {page}
+    </LayoutPortfolio>
+  )
+}
+
+export default Lucidworks

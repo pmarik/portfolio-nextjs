@@ -30,6 +30,7 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {
 
 interface LinkButtonProps extends ButtonProps {
     to: string | object
+    target: "_blank" | "_self" | "_parent" | "_top"
 }
 
 interface ExternalBtnProps extends ButtonProps {
@@ -63,7 +64,6 @@ function ButtonLink ({
                 ${getBtnDisplay(display)}
             `}
             href={to}
-            // target="_blank"
             {...props}
         >
             <span className={cn(buttonVariants({ variant }))}>
