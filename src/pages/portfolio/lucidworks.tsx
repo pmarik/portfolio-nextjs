@@ -1,14 +1,19 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from '../_app'
-import Link from "next/link";
+import CustomHead from '@/components/molecules/Head/Head.component'
 import { LayoutPortfolio } from '@/components/organisms/Layout'
 import Image from 'next/image'
 // import { ExternalButtonLink } from "@/components/atoms/ButtonLink/ButtonLink.component"
-import ButtonLink, { ExternalButtonLink, buttonVariants } from "@/components/atoms/ButtonLink/ButtonLink.component"
+import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
 import lucidworksImg from 'public/project-imgs/lucidworks-project.jpg'
 
 function Lucidworks<NextPageWithLayout>() {
   return (
+    <>
+      <CustomHead
+        title="Marik Tech | Portfolio | Lucidworks"
+        description='Boost your business with enhanced web development and design solutions from Marik Tech.'
+      />
       <main className="flex min-h-screen flex-col items-center justify-between pt-32 md:pt-40 text-black">
         <div className=" px-6 md:px-10 lg:px-20">
           <div className="flex flex-col justify-between lg:flex-row-reverse">
@@ -26,13 +31,6 @@ function Lucidworks<NextPageWithLayout>() {
                 <section>
                   <h2 className="bg-[#333] text-color-300 pl-4 mt-8">About</h2>
                   <p className="my-8 ml-4">Revamp of Lucidworks documenation site. Interactive documentation built upon Gatsby.js sourced from asciidoc files and powered by internal tools from Lucidworks.</p>
-                  {/* <ExternalButtonLink
-                      to="www.doc.lucidworks.com"
-                      display="primary"
-                      variant={'whiteMain'}
-                  >
-                      View site
-                  </ExternalButtonLink> */}
                    <ButtonLink
                         to="https://doc.lucidworks.com"
                         display="primary"
@@ -84,7 +82,7 @@ function Lucidworks<NextPageWithLayout>() {
 
                   <div className="flex justify-center flex-col md:flex-row gap-8">
                     <ButtonLink
-                        to="/#contact"
+                        to="#contact"
                         display="primary"
                         variant={'whiteMainLarge'}
                     >
@@ -100,6 +98,7 @@ function Lucidworks<NextPageWithLayout>() {
                   </div>
           </section>
       </main>
+    </>
   )
 }
 

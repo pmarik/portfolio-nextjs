@@ -197,6 +197,25 @@ body {
   display: none;
 }
 
+.btn-animate, .btn-animate-lg, .btn-animate-sm{
+  transition: 200ms ease-in-out;
+}
+
+.btn-animate:hover, .btn-animate-lg:hover, .btn-animate-sm:hover{
+  transform: scale(0.95);
+}
+.btn-animate:hover::after{
+  transform: scaleX(1.1) scaleY(1.1) translate(60%, 60%);
+}
+
+.btn-animate-lg:hover::after{
+  transform: scaleX(1.1) scaleY(1.1) translate(80%, 80%);
+}
+
+.btn-animate-sm:hover::after{
+  transform: scaleX(1.1) scaleY(1.1) translate(70%, 70%);
+}
+
 @media screen and (min-width: 768px){
   .jagged-after::after{
     height: 30px;

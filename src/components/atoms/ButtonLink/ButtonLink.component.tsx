@@ -8,11 +8,11 @@ export const buttonVariants = cva(
     {
         variants: {
             variant: {
-                default: "after:border-r-white after:border-b-white border-white",
-                main: "after:border-r-color-300 after:border-b-color-300 border-color-300 text-color-300",
-                whiteMain: "text-lg md:w-3/4 w-full mr-4 md:ml-4 after:border-r-color-500 after:border-r-2 after:border-b-2 border-2 after:border-b-color-500 border-color-500 text-color-500",
-                whiteMainLarge: "mx-6 md:mx-[unset] xl:px-24  md:text-xl lg:text-2xl after:border-r-color-500 after:border-r-[3px] after:border-b-[3px] border-[3px] after:border-b-color-500 border-color-500 text-color-500",
-                whiteMainSmall: "mx-16 md:mx-[unset] xl:px-10 xl:py-3 after:border-r-color-500 after:border-r-2 after:border-b-2 border-2 after:border-b-color-500 border-color-500 text-color-500"
+                default: "btn-animate after:border-r-white after:border-b-white border-white",
+                main: "btn-animate after:border-r-color-300 after:border-b-color-300 border-color-300 text-color-300",
+                whiteMain: "btn-animate-lg text-lg md:w-3/4 w-full mr-4 md:ml-4 after:border-r-color-500 after:border-r-2 after:border-b-2 border-2 after:border-b-color-500 border-color-500 text-color-500",
+                whiteMainLarge: "btn-animate-lg mx-6 md:mx-[unset] xl:px-24  md:text-xl lg:text-2xl after:border-r-color-500 after:border-r-[3px] after:border-b-[3px] border-[3px] after:border-b-color-500 border-color-500 text-color-500",
+                whiteMainSmall: "btn-animate-sm mx-16 md:mx-[unset] xl:px-10 xl:py-3 after:border-r-color-500 after:border-r-2 after:border-b-2 border-2 after:border-b-color-500 border-color-500 text-color-500"
             }
         },
         defaultVariants: {
@@ -30,7 +30,7 @@ interface ButtonProps extends VariantProps<typeof buttonVariants> {
 
 interface LinkButtonProps extends ButtonProps {
     to: string | object
-    target: "_blank" | "_self" | "_parent" | "_top"
+    target?: "_blank" | "_self" | "_parent" | "_top"
 }
 
 interface ExternalBtnProps extends ButtonProps {

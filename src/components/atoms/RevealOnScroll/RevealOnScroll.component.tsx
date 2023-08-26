@@ -1,5 +1,3 @@
-"use client"
-
 import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 import classnames from 'classnames'

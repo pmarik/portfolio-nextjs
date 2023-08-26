@@ -1,5 +1,6 @@
 import MainProjectSlot from "@/components/molecules/MainProjectSlot/MainProjectSlot.component" 
 import Link from "next/link"
+import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
 import lucidworksImg from 'public/project-imgs/lucidworks-project.jpg'
 import tradetrackerImg from 'public/project-imgs/trade-tracker-project.jpg'
 import applecoreImg from 'public/project-imgs/applecore-project.jpg'
@@ -37,7 +38,16 @@ const ProjectsSection:React.FC = () => {
                 />
 
             </div>
-            <Link href='/portfolio' className="mt-8 md:mt-[unset] mb-40 row-start-4 md:row-start-3 col-start-1 text-color-400 "><span className="border-b border-color-400">View All Projects</span></Link>
+            {/* <Link href='/portfolio' className="mt-8 md:mt-[unset] mb-40 row-start-4 md:row-start-3 col-start-1 text-color-400 "><span className="border-b border-color-400">View All Projects</span></Link> */}
+            <div className="mt-8 md:mt-[unset] mb-40 row-start-4 md:row-start-3 col-start-1">
+                <ButtonLink
+                            to="/portfolio"
+                            display="primary"
+                            variant={'whiteMainSmall'}
+                        >
+                        View All Projects
+                </ButtonLink>
+            </div>
         </>
     )
 }

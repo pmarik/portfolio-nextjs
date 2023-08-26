@@ -1,5 +1,3 @@
-"use client"
-
 import React, { ReactNode, useEffect, useCallback } from 'react' 
 import useEmblaCarousel, {EmblaCarouselType} from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
