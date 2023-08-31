@@ -17,6 +17,7 @@ const NavLinks:React.FC = () => {
         const elem = document.getElementById(targetId);
         elem?.scrollIntoView({
           behavior: "smooth",
+          inline: "nearest"
         });
       };
 

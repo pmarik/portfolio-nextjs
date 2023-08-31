@@ -7,7 +7,7 @@ import Image from 'next/image'
 import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
 import lucidworksImg from 'public/project-imgs/lucidworks-project.jpg'
 
-function Lucidworks<NextPageWithLayout>() {
+function Project<NextPageWithLayout>() {
   return (
     <>
       <CustomHead
@@ -86,14 +86,14 @@ function Lucidworks<NextPageWithLayout>() {
                         display="primary"
                         variant={'whiteMainLarge'}
                     >
-                      contact now
+                      Contact Now
                     </ButtonLink>
                     <ButtonLink
                         to="portfolio"
                         display="primary"
                         variant={'whiteMainSmall'}
                     >
-                      view next project
+                      View Next Project
                     </ButtonLink>
                   </div>
           </section>
@@ -102,7 +102,7 @@ function Lucidworks<NextPageWithLayout>() {
   )
 }
 
-Lucidworks.getLayout = function getLayout(page: ReactElement){
+Project.getLayout = function getLayout(page: ReactElement){
   return (
     <LayoutPortfolio>
       {page}
@@ -110,4 +110,4 @@ Lucidworks.getLayout = function getLayout(page: ReactElement){
   )
 }
 
-export default Lucidworks
+export default Project

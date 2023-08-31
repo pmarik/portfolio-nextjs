@@ -1,8 +1,8 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Link from "next/link"
 import { useForm, SubmitHandler} from 'react-hook-form';
 import axios from 'axios'
-import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
+import { buttonVariants } from "@/components/atoms/ButtonLink/ButtonLink.component"
 
 
 type Inputs = {
@@ -23,10 +23,14 @@ interface EncodeData {
 const ContactForm:React.FC = () => {
 
     
+    // const formRef = useRef<HTMLFormElement>(null);
+    // const nameRef = useRef<HTMLInputElement>(null);
+    // const emailRef = useRef<HTMLInputElement>(null);
+    // const messageRef = useRef<HTMLInputElement>(null);
+
+    
+    const [feedbackMsg, setFeedbackMsg] = useState<string>('');
     const formRef = useRef<HTMLFormElement>(null);
-    const nameRef = useRef<HTMLInputElement>(null);
-    const emailRef = useRef<HTMLInputElement>(null);
-    const messageRef = useRef<HTMLInputElement>(null);
 
     const {
         register,
@@ -62,11 +66,11 @@ const ContactForm:React.FC = () => {
         axios(axiosOptions)
           .then(response => {
               console.log({response})
-            //   setFeedbackMsg("Form submitted successfully!");
-            //   formRef.current.reset()
+              setFeedbackMsg("Form submitted successfully!");
+              formRef.current?.reset()
           })
           .catch(err => {
-            //   setFeedbackMsg("Form could not be submitted. Please refresh and try again.");
+              setFeedbackMsg("Form could not be submitted. Please refresh and try again.");
               console.log(err)
           })
     }
@@ -115,6 +119,7 @@ const ContactForm:React.FC = () => {
             method="POST" 
             data-netlify="true" 
             data-netlify-honeypot="bot-field"
+            ref={formRef}
         >
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
             <input type="hidden" name="form-name" value="Contact Form" />
@@ -132,15 +137,15 @@ const ContactForm:React.FC = () => {
                         {...register('name', {required: true })}
                         placeholder="enter your name" 
                         aria-label="Enter Name"
-                        className="w-full rounded p-2 mt-1 mb-5"
+                        className={`w-full rounded p-2 mt-1 ${errors.name ? 'mb-[unset]' : 'mb-5 '} `}
                     />
-                    {errors.name && <p className="text-red-600">Last name is required.</p>}
+                    {errors.name && <p className="text-red-600 mb-5">Last name is required.</p>}
             </label>
 
             <label htmlFor={'email'}>
                     <span className="form-label-text text-white">Email</span>
                     <input 
-                        className="w-full rounded p-2 mt-1 mb-5"
+                        className={`w-full rounded p-2 mt-1 ${errors.email ? 'mb-[unset]' : 'mb-5 '} `}
                         {...register('email', {required: true, pattern: {
                             value: /\S+@\S+\.\S+/,
                             message: "Entered value does not match email format"
@@ -149,12 +154,12 @@ const ContactForm:React.FC = () => {
                         placeholder="enter your email" 
                         aria-label="Enter Email"
                     />
-                    {errors.email && <p className="text-red-600">Please enter a valid email address</p>}
+                    {errors.email && <p className="text-red-600 mb-5">Please enter a valid email address</p>}
             </label>
 
             <label htmlFor={'message'} className='textarea-wrap '>
                     <span className="form-label-text text-white">
-                        Message 
+                        Message
                         {/* {state.pricingText && (<span className="pricing-text"> ({state.pricingText})</span>)} */}
                     </span>
                     <textarea
@@ -165,13 +170,10 @@ const ContactForm:React.FC = () => {
                     />
             </label>
 
-            {/* <button type="submit" className='bg-white'>SUBMIT</button> */}
-            <ButtonLink
-                to="#projects"
-                display="primary"
-            >
-                submit
-            </ButtonLink>
+            <button type="submit" className={buttonVariants({variant: 'default'})}>Send Message</button>
+
+            {feedbackMsg && <p className="text-white" style={{color: '#FFF !important', marginTop: '1.5em', textAlign: 'center'}}>{feedbackMsg}</p>}
+
         </form>
     )
 }
