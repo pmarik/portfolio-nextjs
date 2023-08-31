@@ -1,15 +1,42 @@
 import Link from "next/link";
 import React, { ReactNode } from 'react'
+import { VariantProps, cva } from 'class-variance-authority'
+import { cn } from '@/lib/utils'
 
-
+export const buttonVariants = cva(
+    "text-slate-50 py-2 px-6 sm:py-2 lg:py-3 lg:px-10 xl:py-4 md:px-8 xl:px-16 border relative block after:border after:absolute  after:w-[10px] after:h-[10px] lg:after:w-[13px] lg:after:h-[13px] xl:after:w-[15px] xl:after:h-[15px] after:bg-transparent after:right-[5px] after:bottom-[5px] after:border-transparent after:duration-500",
+    {
+        variants: {
+            variant: {
+                default: "btn-animate after:border-r-white after:border-b-white border-white",
+                main: "btn-animate after:border-r-color-300 after:border-b-color-300 border-color-300 text-color-300",
+                whiteMain: "btn-animate-lg text-lg md:w-3/4 w-full mr-4 md:ml-4 after:border-r-color-500 after:border-r-2 after:border-b-2 border-2 after:border-b-color-500 border-color-500 text-color-500",
+                whiteMainLarge: "btn-animate-lg mx-6 md:mx-[unset] xl:px-24  md:text-xl lg:text-2xl after:border-r-color-500 after:border-r-[3px] after:border-b-[3px] border-[3px] after:border-b-color-500 border-color-500 text-color-500",
+                whiteMainSmall: "btn-animate-sm mx-16 md:mx-[unset] xl:px-10 xl:py-3 after:border-r-color-500 after:border-r-2 after:border-b-2 border-2 after:border-b-color-500 border-color-500 text-color-500"
+            }
+        },
+        defaultVariants: {
+            variant: 'default'
+        }
+    }
+)
 
 type ButtonDisplay = "primary" | "secondary"
 
-interface ButtonProps {
+interface ButtonProps extends VariantProps<typeof buttonVariants> {
     children?: ReactNode | string
-    to: string
     display: ButtonDisplay
 }
+
+interface LinkButtonProps extends ButtonProps {
+    to: string | object
+    target?: "_blank" | "_self" | "_parent" | "_top"
+}
+
+interface ExternalBtnProps extends ButtonProps {
+    to: string 
+}
+
 
 const getBtnDisplay = (display?: ButtonDisplay) => {
     switch(display){
@@ -22,38 +49,13 @@ const getBtnDisplay = (display?: ButtonDisplay) => {
     }
 }
 
-const ButtonLink: React.FC<ButtonProps> = ({
+function ButtonLink ({
     children,
     to,
-    display
-}) => {
-
-   
-    // return (
-    //     <Link
-    //         className={`border shadow-md max-w-xl rounded-sm bg-main-color-400 py-4 px-12 text-slate-950 hover:bg-color-500 transition-colors 
-    //             ${getBtnDisplay(display)}
-    //         `}
-    //         href={to}
-    //         target="_blank"
-    //     >
-    //         <span className="font-bold text-slate-50 ">{children}</span>
-    //     </Link>
-    // )
-
-
-    // before:border-4
-    // before:absolute
-    // before:w-[30px]
-    // before:h-[30px]
-    // before:bg-transparent
-    // before:top-[-7px]
-    // before:left-[-7px]
-    // before:border-transparent
-    // before:border-t-indigo-500
-    // before:border-l-indigo-500
-    // before:duration-500
-
+    display,
+    variant,
+    ...props
+}:LinkButtonProps) {
 
     return (
         <Link
@@ -62,42 +64,38 @@ const ButtonLink: React.FC<ButtonProps> = ({
                 ${getBtnDisplay(display)}
             `}
             href={to}
-            target="_blank"
+            {...props}
         >
-            <span className=" text-slate-50 py-2 px-6 md:py-4 md:px-16 border
-              relative
-              block
-                 
-              after:border-2
-              after:absolute
-              after:w-[20px]
-              after:h-[20px]
-              after:bg-transparent
-              after:right-[5px]
-              after:bottom-[5px]
-              after:border-transparent
-              after:border-r-white
-              after:border-b-white
-              after:duration-500
-            
-            ">{children}</span>
+            <span className={cn(buttonVariants({ variant }))}>
+                {children}
+            </span>
         </Link>
     )
 }
 
+export function ExternalButtonLink ({
+    children,
+    to,
+    display,
+    variant,
+    ...props
+}:ExternalBtnProps) {
 
-// export function ButtonSecondary({ children }: {children: string } ){
-//     return (
-//         <Link
-//             className="inline-block shadow-md max-w-xl rounded-sm  py-4 px-12 text-slate-950 hover:bg-white/20"
-//             href="https://create.t3.gg/en/introduction"
-//             target="_blank"
-//         >
-//             <span className="font-bold text-slate-50 ">{children}</span>
-//         </Link>
-//     )
-// }
-//    // ${width === 'full' ? "block text-center" : 'inline-block '}
-
+    return (
+        <a
+            className={`
+              
+                ${getBtnDisplay(display)}
+            `}
+            href={to}
+            target="_blank"
+            {...props}
+        >
+            <span className={cn(buttonVariants({ variant }))}>
+                {children}
+            </span>
+        </a>
+    )
+}
 
 export default ButtonLink

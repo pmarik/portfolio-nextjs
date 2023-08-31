@@ -1,8 +1,9 @@
-"use client"
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Link from "next/link"
 import { useForm, SubmitHandler} from 'react-hook-form';
 import axios from 'axios'
+import { buttonVariants } from "@/components/atoms/ButtonLink/ButtonLink.component"
+
 
 type Inputs = {
     name: string
@@ -22,10 +23,14 @@ interface EncodeData {
 const ContactForm:React.FC = () => {
 
     
+    // const formRef = useRef<HTMLFormElement>(null);
+    // const nameRef = useRef<HTMLInputElement>(null);
+    // const emailRef = useRef<HTMLInputElement>(null);
+    // const messageRef = useRef<HTMLInputElement>(null);
+
+    
+    const [feedbackMsg, setFeedbackMsg] = useState<string>('');
     const formRef = useRef<HTMLFormElement>(null);
-    const nameRef = useRef<HTMLInputElement>(null);
-    const emailRef = useRef<HTMLInputElement>(null);
-    const messageRef = useRef<HTMLInputElement>(null);
 
     const {
         register,
@@ -61,11 +66,11 @@ const ContactForm:React.FC = () => {
         axios(axiosOptions)
           .then(response => {
               console.log({response})
-            //   setFeedbackMsg("Form submitted successfully!");
-            //   formRef.current.reset()
+              setFeedbackMsg("Form submitted successfully!");
+              formRef.current?.reset()
           })
           .catch(err => {
-            //   setFeedbackMsg("Form could not be submitted. Please refresh and try again.");
+              setFeedbackMsg("Form could not be submitted. Please refresh and try again.");
               console.log(err)
           })
     }
@@ -108,12 +113,13 @@ const ContactForm:React.FC = () => {
          <form 
             onSubmit={handleSubmit(onSubmit)} 
             className="
-            col-start-7 col-end-13 row-start-2 row-span-3
-            flex flex-col text-slate-950 p-8 bg-slate-400 bg-opacity-10 rounded-xl"
+            row-start-4 md:col-start-7 md:col-end-13 md:row-start-2 md:row-span-5
+            flex flex-col text-slate-950 p-8 bg-slate-400 bg-opacity-10 rounded-xl leading-relaxed"
             name="Contact Form" 
             method="POST" 
             data-netlify="true" 
             data-netlify-honeypot="bot-field"
+            ref={formRef}
         >
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
             <input type="hidden" name="form-name" value="Contact Form" />
@@ -126,19 +132,20 @@ const ContactForm:React.FC = () => {
             </div>
 
             <label htmlFor={'name'}>
-                    <span className="form-label-text">Name</span>
+                    <span className="form-label-text text-white">Name</span>
                     <input 
                         {...register('name', {required: true })}
                         placeholder="enter your name" 
                         aria-label="Enter Name"
+                        className={`w-full rounded p-2 mt-1 ${errors.name ? 'mb-[unset]' : 'mb-5 '} `}
                     />
-                    {errors.name && <p className="text-red-600">Last name is required.</p>}
+                    {errors.name && <p className="text-red-600 mb-5">Last name is required.</p>}
             </label>
 
             <label htmlFor={'email'}>
-                    <span className="form-label-text">Email</span>
+                    <span className="form-label-text text-white">Email</span>
                     <input 
-                        className="mt-8"
+                        className={`w-full rounded p-2 mt-1 ${errors.email ? 'mb-[unset]' : 'mb-5 '} `}
                         {...register('email', {required: true, pattern: {
                             value: /\S+@\S+\.\S+/,
                             message: "Entered value does not match email format"
@@ -147,23 +154,26 @@ const ContactForm:React.FC = () => {
                         placeholder="enter your email" 
                         aria-label="Enter Email"
                     />
-                    {errors.email && <p className="text-red-600">Please enter a valid email address</p>}
+                    {errors.email && <p className="text-red-600 mb-5">Please enter a valid email address</p>}
             </label>
 
-            <label htmlFor={'message'} className='textarea-wrap mt-8'>
-                    <span className="form-label-text">
-                        Message 
+            <label htmlFor={'message'} className='textarea-wrap '>
+                    <span className="form-label-text text-white">
+                        Message
                         {/* {state.pricingText && (<span className="pricing-text"> ({state.pricingText})</span>)} */}
                     </span>
                     <textarea
-                        className="mb-8"
+                        className="mb-8 w-full p-2 rounded h-[200px] max-h-[250px]"
                         {...register('message', {required: true})}
                         placeholder="type your message" 
                         aria-label="Type Message"
                     />
             </label>
 
-            <button type="submit">SUBMIT</button>
+            <button type="submit" className={buttonVariants({variant: 'default'})}>Send Message</button>
+
+            {feedbackMsg && <p className="text-white" style={{color: '#FFF !important', marginTop: '1.5em', textAlign: 'center'}}>{feedbackMsg}</p>}
+
         </form>
     )
 }

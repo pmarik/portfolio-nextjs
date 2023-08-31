@@ -1,21 +1,28 @@
-import Image from 'next/image'
+import Link from 'next/link'
 import NavLinks from '@/components/molecules/NavLinks/NavLinks.component'
 
-const Nav:React.FC = () => {
+type NavProps = {
+    classNames: string
+    baseUrl: string
+}
+
+const Nav:React.FC<NavProps> = ({
+    classNames,
+    baseUrl
+}) => {
     return (
-        <div className="w-full absolute flex justify-between px-6 md:px-20 py-10 z-20">
+        <div className={`w-full absolute flex justify-between px-6 md:px-10 lg:px-20 py-8 z-20 max-w-maximum  min-w-minimum m-[0_auto] ${classNames}`}>
             <div 
                 className="picture-img-wrap w-[40px] md:w-[unset]"
             >
-                <picture>
-                    <source type="image/svg+xml" srcSet='/logoSmall.svg' media="(max-width: 768px)" />
-                    <Image
-                        src="/logo-script.svg"
-                        alt="Marik Tech logo"
-                        width={150}
-                        height={24}
-                    />
-                </picture>
+                <Link href='/' className="logoBig" >
+                    <img src={`${baseUrl}/svgs/logo-script.svg`}  alt="Marik Tech" width="150px" height="24px"/>
+                </Link>
+
+                <Link href='/' className="logoSmall" >
+                    <img src={`${baseUrl}/svgs/logoSmall.svg`}alt="Marik Tech" width="40px" height="28px" />
+                </Link>
+            
             </div>
             <NavLinks/>
         </div>

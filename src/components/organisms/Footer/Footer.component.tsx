@@ -4,11 +4,11 @@ import FooterLinks from "@/components/molecules/FooterLinks/FooterLinks.componen
 
 const Footer:React.FC = () => {
     return (
-        <footer className=" bg-smudge relative jagged-before" id="contact">
-            <div className="md:px-20 md:py-12 grid  grid-cols-1 md:grid-cols-12 ">
-                <h3 className="text-xl text-color-300 col-start-1 col-end-7">Let&apos;s talk.</h3>
-                <h2 className="title-clamp mb-4 col-start-1 col-end-7 row-start-2">Get in touch</h2>
-                <p className="col-start-1 col-end-7 mb-20" >Start the conversation to help improve your online presence to get real results for your business</p>
+        <footer className=" bg-smudge bg-cover relative jagged-before pt-20 max-w-maximum min-w-minimum m-[0_auto]">
+            <div id="contact" className="px-6 md:px-10 lg:px-20 md:py-12 grid grid-cols-1 md:grid-cols-12 leading-relaxed">
+                <h3 className="text-xl text-color-300 row-start-1 md:col-start-1 md:col-end-7">Let&apos;s talk.</h3>
+                <h2 className="title-clamp mb-4 row-start-2 md:col-start-1 md:col-end-7 md:row-start-2">Get in touch</h2>
+                <p className="row-start-3 md:col-start-1 md:col-end-7 mb-20 md:pr-5" >Start the conversation to help improve your online presence to get real results for your business</p>
                 <ContactForm />
                 <ContactIcons />
                 <FooterLinks />

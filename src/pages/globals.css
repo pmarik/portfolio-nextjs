@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --color-300: #FF9900;
+  --color-400: #D64D00;
+  --color-500: #DF8A0D;
+}
+
+
+/* html{
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+} */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+
+
+@layer utilities {
+  .title-clamp {
+    line-height: 1;
+    font-size: 3rem;
+    font-size: clamp(1rem,4vw,3rem);
+  }
+}
+
+.jagged-after::after{
+  position: absolute;
+  content: '';
+  background-image: url('/svgs/jagged.svg');
+  background-position-y:bottom;
+  width: 100%;
+  background-size: 200%;
+  height: 40px;
+  display:block;
+  bottom: 0;
+  background-repeat: no-repeat;
+  z-index:15;
+}
+
+.jagged-before::before{
+  position:absolute;
+  content: '';
+  background-image: url('/svgs/jagged.svg');
+  background-position-y:bottom;
+  background-size: 200%;
+  width: 100%;
+  height: 50px;
+  display:block;
+  transform:rotate(180deg);
+  top: 0;
+  left:0;
+  background-repeat: no-repeat;
+  z-index:15;
+}
+
+.quote-graphic::after{
+  position: absolute;
+  content: '';
+  background-image: url('/svgs/quote-close.svg');
+  background-position-y:bottom;
+  width: 521px;
+  height: 556px;
+  bottom: 0;
+  right:0;
+  background-repeat: no-repeat;
+}
+
+.quote-start-graphic::before{
+  position: absolute;
+  content: '';
+  background-image: url('/svgs/quote-start.svg');
+  background-position-y:bottom;
+  width: 280px;
+  height: 307px;
+  top: -5rem;
+  left: -5rem;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.picture-img-wrap{
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.phoneGraphic_svg__bouncy-anim{
+  animation-duration: 4s;
+  -webkit-animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-name: bouncy;
+  -webkit-animation-name: bouncy;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.520, 1);
+}
+
+.phoneGraphic_svg__bouncy-anim.phoneGraphic_svg__design-anim{
+    animation-delay: 0.25s;
+    -webkit-animation-delay: 0.25s;
+}
+.phoneGraphic_svg__bouncy-anim.phoneGraphic_svg__rocket-anim{
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+}
+
+/* ANIMATIONS */
+ @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+.fade-in{-webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
+
+@-webkit-keyframes fade-in-2{0%{opacity:0}100%{opacity:1}}@keyframes fade-in-2{0%{opacity:0}100%{opacity:1}}
+.fade-in-2{-webkit-animation:fade-in-2 1.3s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in-2 1.3s cubic-bezier(.39,.575,.565,1.000) both}
+
+@-webkit-keyframes fade-in-3{0%{opacity:0}100%{opacity:1}}@keyframes fade-in-3{0%{opacity:0}100%{opacity:1}}
+.fade-in-3{-webkit-animation:fade-in-3 1.4s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in-3 1.4s cubic-bezier(.39,.575,.565,1.000) both}
+
+ @-webkit-keyframes text-focus-in{0%{-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes text-focus-in{0%{-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+.text-focus-in{-webkit-animation:text-focus-in 450ms cubic-bezier(.55,.085,.68,.53) both;animation:text-focus-in 450ms cubic-bezier(.55,.085,.68,.53) both}
+
+@keyframes bouncy{
+    0% {transform: translateY(0);}
+    20% {transform: translateY(0);}
+    40% {transform: translateY(-20px);}
+    50% {transform: translateY(0);}
+    60% {transform: translateY(-5px);}
+    80% {transform: translateY(0);}
+    100% {transform: translateY(0);}
+}
+
+
+.embla {
+  overflow: hidden;
+  width:100%
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla__dot {
+  -webkit-appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.embla__dots {
+  z-index: 1;
+  bottom: 1.6rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.embla__dot {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+.embla__dot:after {
+  background: #D64E00;
+  border-radius: 0.2rem;
+  width: 100%;
+  height: 0.3rem;
+  content: '';
+}
+.embla__dot--selected:after {
+  background:#2B1700
+}
+
+.logoBig{
+  display: none;
+}
+
+.btn-animate, .btn-animate-lg, .btn-animate-sm{
+  transition: 200ms ease-in-out;
+}
+
+.btn-animate:hover, .btn-animate-lg:hover, .btn-animate-sm:hover{
+  transform: scale(0.95);
+}
+
+span.underline{
+  text-decoration: none;
+  line-height: 1.5;
+  background-repeat: no-repeat;
+  background-size: 100% 4%;
+  background-position: 0 100%;
+  background-image: linear-gradient(0deg, var(--color-400), var(--color-400));
+  padding-bottom: 2px;
+  transition: all 0.5s ease;
+  transition-property: background-size;
+}
+
+span.underline:hover{
+  background-size: 50% 4%;
+}
+
+
+@media screen and (min-width: 768px){
+  .jagged-after::after{
+    height: 30px;
+  }
+  .logoSmall{
+    display:none;
+  }
+  .logoBig{
+    display:block;
+  }
+  .btn-animate:hover::after{
+    transform: scaleX(1.1) scaleY(1.1) translate(90%, 85%);
+  }
+  
+  .btn-animate-lg:hover::after{
+    transform: scaleX(1.1) scaleY(1.1) translate(95%, 90%);
+  }
+  
+  .btn-animate-sm:hover::after{
+    transform: scaleX(1.1) scaleY(1.1) translate(95%, 90%);
+  }
+
+}
+
+@media screen and (min-width: 992px){
+  .btn-animate:hover::after{
+    transform: scaleX(1.1) scaleY(1.1) translate(60%, 60%);
+  }
+  
+  .btn-animate-lg:hover::after{
+    transform: scaleX(1.1) scaleY(1.1) translate(80%, 80%);
+  }
+  
+  .btn-animate-sm:hover::after{
+    transform: scaleX(1.1) scaleY(1.1) translate(70%, 70%);
+  }
+  .jagged-before::before, .jagged-after::after{
+    background-size: unset;
+  }
+}
