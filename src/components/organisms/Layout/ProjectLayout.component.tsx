@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo'
 import Image, { StaticImageData} from 'next/image'
 import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
+import { motion, useAnimation } from 'framer-motion'
 
 
 export function ProjectLayout({
@@ -31,16 +32,34 @@ export function ProjectLayout({
         <main className="flex min-h-screen flex-col items-center justify-between pt-32 md:pt-40 text-black">
           <div className=" px-6 md:px-10 lg:px-20">
             <div className="flex flex-col justify-between lg:flex-row-reverse">
-              <div>
-                <Image
-                    src={img}
-                    alt={`${title} product image`}
-                    className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 lg:pl-8 md:w-full "
-                />
-              </div>
+              <motion.div
+                  layoutId={title}
+                  animate={{scale:1}}
+                  layout
+                  // transition={{
+                  //   layout: {
+                  //       duration: 0.3,
+                  //       type: 'spring',
+                  //   }
+                // }}
+                onLayoutAnimationStart={() => console.log('yo')}
+
+              >
+                <motion.span
+                    layout='preserve-aspect'
+                >
+                  <Image
+                      src={img}
+                      alt={`${title} product image`}
+                      className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 lg:pl-8 overflow-hidden "
+                      width={1510}
+                      height={924}
+                  />
+                </motion.span>
+              </motion.div>
             
               {/* <ProjectHero> */}
-                <div className="mt-8 lg:mt-[unset] lg:mr-8 lg:w-[40%]">
+                <div className="mt-8 lg:mt-[unset] lg:mr-8 lg:w-[80%] text-focus-in">
                   <h1 className="text-2xl md:title-clamp md:mt-8">{title}</h1>
                   <section>
                     <h2 className="bg-[#333] text-color-300 pl-4 mt-8">About</h2>

@@ -23,8 +23,61 @@ import daymakerImg from 'public/project-imgs/daymaker-project-logo.jpg'
 import unaffiliatedImg from 'public/project-imgs/unaffiliated-project-logo.jpg'
 import neovidaImg from 'public/project-imgs/neovida-project-logo.jpg'
 import viewerImg from 'public/project-imgs/3dviewer-project-logo.jpg'
+import { motion } from 'framer-motion'
 
 import { useRouter } from 'next/navigation'
+
+const gridData = [
+    {
+        title: 'Lucidworks',
+        destination: '/portfolio/lucidworks',
+        layoutId: 'Lucidworks',
+        img: lucidworksImg,
+        alt: 'Lucidworks product image'
+    },
+    {
+        title: 'Trade Tracker',
+        destination: '/portfolio/trade-tracker',
+        layoutId: 'Trade Tracker',
+        img: tradetrackerImg,
+        alt: 'Trade Tracker product image'
+    },
+    {
+        title: 'Applecore',
+        destination: '/portfolio/applecore',
+        layoutId: 'Applecore',
+        img: applecoreImg,
+        alt: 'Applecore product image'
+    },
+    {
+        title: 'Unaffiliated',
+        destination: '/portfolio/unaffiliated',
+        layoutId: 'Unaffiliated Productions',
+        img: unaffiliatedImg,
+        alt: 'Unaffiliated product image'
+    },
+    {
+        title: 'Daymaker Touring',
+        destination: '/portfolio/daymaker',
+        layoutId: 'Daymaker Touring',
+        img: daymakerImg,
+        alt: 'Daymaker product image'
+    },
+    {
+        title: 'Neovida',
+        destination: '/portfolio/neovida',
+        layoutId: 'Neovida',
+        img: neovidaImg,
+        alt: 'Neovida product image'
+    },
+    {
+        title: '3D Viewer',
+        destination: '/portfolio/3dviewer',
+        layoutId: '3D Viewer',
+        img: viewerImg,
+        alt: '3D viewer product image'
+    }
+]
 
 const ProjectsGrid:React.FC = () => {
 
@@ -34,55 +87,34 @@ const ProjectsGrid:React.FC = () => {
         <div className="relative bg-white w-full px-6 md:px-20  text-center md:text-left max-w-maximum  min-w-minimum 
             grid grid-cols-[repeat(auto-fill,_minmax(380px,_1fr))] gap-[20px] object-cover py-40 h-full 
         ">
-            <div title="Lucidworks" onClick={() => router.push('/portfolio/lucidworks')} className=" bg-white cursor-pointer transform transition duration-200 hover:scale-[1.02]">
-                <Image
-                        src={lucidworksImg}
-                        alt="lucidworks image"
-                        className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 w-full "
-                    />
-            </div>
-            <div title="Trade Tracker" onClick={() => router.push('/portfolio/trade-tracker')} className=" bg-white cursor-pointer transform transition duration-200 hover:scale-[1.02]">
-                <Image
-                        src={tradetrackerImg}
-                        alt="lucidworks image"
-                        className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 w-full "
-                    />
-            </div>
-            <div title="Applecore" onClick={() => router.push('/portfolio/applecore')} className=" bg-white cursor-pointer transform transition duration-200 hover:scale-[1.02]">
-                <Image
-                        src={applecoreImg}
-                        alt="lucidworks image"
-                        className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 w-full "
-                    />
-            </div>
-            <div title="Unaffiliated" onClick={() => router.push('/portfolio/unaffiliated')} className=" bg-white cursor-pointer transform transition duration-200 hover:scale-[1.02]">
-                <Image
-                        src={unaffiliatedImg}
-                        alt="lucidworks image"
-                        className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 w-full "
-                    />
-            </div>
-            <div title="Daymaker Touring" onClick={() => router.push('/portfolio/daymaker')} className=" bg-white cursor-pointer transform transition duration-200 hover:scale-[1.02]">
-                <Image
-                        src={daymakerImg}
-                        alt="lucidworks image"
-                        className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 w-full "
-                    />
-            </div>
-            <div title="Neovida" onClick={() => router.push('/portfolio/neovida')} className=" bg-white cursor-pointer transform transition duration-200 hover:scale-[1.02]">
-                <Image
-                        src={neovidaImg}
-                        alt="lucidworks image"
-                        className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 w-full "
-                    />
-            </div>
-            <div title="3D Viewer" onClick={() => router.push('/portfolio/3d-viewer')} className=" bg-white cursor-pointer transform transition duration-200 hover:scale-[1.02]">
-                <Image
-                        src={viewerImg}
-                        alt="lucidworks image"
-                        className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 w-full "
-                    />
-            </div>
+            {
+                gridData.map(item => 
+                    <motion.div
+                        // layoutRoot
+                        // layoutScroll
+                        layout='preserve-aspect'
+                        layoutId={item.layoutId}
+                        title={item.title}
+                        whileHover={{scale: 1.02}}
+                        onClick={() => router.push(item.destination)} 
+                        initial={{
+                            width: '100%'
+                        }} 
+                        className=" bg-white cursor-pointer "
+                        key={item.title}
+                    >
+                        <motion.span
+                            layout='preserve-aspect'
+                        >
+                            <Image
+                                src={item.img}
+                                alt={item.alt}
+                                className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 w-full"
+                            />
+                        </motion.span>
+                    </motion.div>
+                )
+            }
         </div>
     )
 }
