@@ -1,4 +1,4 @@
-import CustomHead from '@/components/molecules/Head/Head.component'
+import { NextSeo } from 'next-seo'
 import Image, { StaticImageData} from 'next/image'
 import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
 
@@ -24,9 +24,9 @@ export function ProjectLayout({
 
   return (
     <>
-        <CustomHead
-            title={`Marik Tech | Portfolio | ${title}`}
-            description='Boost your business with enhanced web development and design solutions from Marik Tech.'
+        <NextSeo
+          title={`Marik Tech | Portfolio | ${title}`}
+          description="Boost your business with enhanced web development and design solutions from Marik Tech."
         />
         <main className="flex min-h-screen flex-col items-center justify-between pt-32 md:pt-40 text-black">
           <div className=" px-6 md:px-10 lg:px-20">

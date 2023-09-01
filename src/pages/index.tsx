@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
-import CustomHead from '@/components/molecules/Head/Head.component'
+import { NextSeo } from 'next-seo'
 import RootLayout from '@/components/organisms/Layout/Layout.component'
 import HeroSection from '@/components/organisms/HeroSection/HeroSection.component'
 import ProjectsSection from '@/components/organisms/ProjectsSection/ProjectsSection.component'
@@ -10,9 +10,9 @@ import ReviewSection from '@/components/organisms/ReviewSection/ReviewSection.co
 function Home<NextPageWithLayout>() {
   return (
     <>
-      <CustomHead
+      <NextSeo
         title="Marik Tech | Software Engineer"
-        description='Boost your business with enhanced web development and design solutions from Marik Tech.'
+        description="Boost your business with enhanced web development and design solutions from Marik Tech."
       />
       <main className="flex min-h-screen flex-col items-center justify-between ">
         <HeroSection />

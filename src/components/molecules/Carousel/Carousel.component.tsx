@@ -46,6 +46,7 @@ const Carousel:React.FC<CarouselProps> = ({
                     className={'embla__dot'.concat(
                     index === selectedIndex ? ' embla__dot--selected' : ''
                     )}
+                    aria-label='view carousel item button'
                 />
                 ))}
             </div>
