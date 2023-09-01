@@ -1,5 +1,4 @@
 import MainProjectSlot from "@/components/molecules/MainProjectSlot/MainProjectSlot.component" 
-import Link from "next/link"
 import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
 import lucidworksImg from 'public/project-imgs/lucidworks-project.jpg'
 import tradetrackerImg from 'public/project-imgs/trade-tracker-project.jpg'

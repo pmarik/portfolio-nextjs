@@ -1,15 +1,15 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from '../_app'
-import CustomHead from '@/components/molecules/Head/Head.component'
+import { NextSeo } from 'next-seo'
 import { LayoutPortfolio } from '@/components/organisms/Layout'
 import ProjectsGrid from '@/components/organisms/ProjectsGrid/ProjectsGrid.component'
 
 function Portfolio<NextPageWithLayout>() {
   return (
       <>
-          <CustomHead
+          <NextSeo
             title="Marik Tech | Portfolio"
-            description='Boost your business with enhanced web development and design solutions from Marik Tech.'
+            description="Boost your business with enhanced web development and design solutions from Marik Tech."
           />
           <main className="flex min-h-screen flex-col items-center justify-between">
             <ProjectsGrid />

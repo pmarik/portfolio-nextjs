@@ -3,7 +3,8 @@ import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { Kanit } from 'next/font/google'
-
+import { DefaultSeo, SocialProfileJsonLd } from 'next-seo'
+import SEO from '../../next-seo.config';
 
 const kanit = Kanit({ subsets: ["latin"], weight: ["400", "700"]})
  
@@ -26,6 +27,17 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         font-family: ${kanit.style.fontFamily};
     }
     `}</style>
+    <DefaultSeo {...SEO}/>
+    <SocialProfileJsonLd
+      type="Person"
+      name="Paul Marik"
+      url="http://www.marik.tech"
+      sameAs={[
+        'http://instagram.com/paul_marik',
+        'https://www.linkedin.com/in/paul-marik-web-developer/',
+        'https://github.com/pmarik',
+      ]}
+    />
     <Component className={kanit.className} {...pageProps} />
   </>)
 }
