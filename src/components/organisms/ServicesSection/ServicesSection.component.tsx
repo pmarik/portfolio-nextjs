@@ -6,10 +6,10 @@ import RevealOnScroll from '@/components/atoms/RevealOnScroll/RevealOnScroll.com
 
 const ServicesSection:React.FC = () => {
     return (
-        <div id="services" className="w-full pt-12 pb-[7rem] px-6 md:px-10 lg:px-20 md:flex justify-between bg-cover bg-dark-gradient max-w-maximum  min-w-minimum ">
+        <div id="services" className="w-full pt-12 pb-[2rem] px-6 md:px-10 lg:px-20 md:flex justify-between bg-cover bg-dark-gradient max-w-maximum  min-w-minimum ">
             <div className="md:w-1/2 md:pr-6  md:sticky top-20 h-min">
                 <p className="text-xl text-color-300 mt-16">For hire.</p>
-                <h2 className="text-2xl md:title-clamp mb-4">Services</h2>
+                <h2 className="text-2xl md:title-clamp mb-4">Digital Solutions</h2>
                 <p className="leading-relaxed">Your site, your brand. Experience what a personalized online presence can do for your business. I make your ideas a reality with the following focus:</p>
                 <div className="border-l border-white z-10 h-[100px] md:h-[200px] col-end-13 row-start-1 row-end-7 mt-7"/>
 
@@ -30,7 +30,7 @@ const ServicesSection:React.FC = () => {
 
                 <RevealOnScroll className='h-[200px] mb-24'>
                     <LinkIcon />
-                    <h3 className="text-2xl mb-4 mt-2">SEO and Marketing</h3>
+                    <h3 className="text-2xl mb-4 mt-2">SEO and Accessibility</h3>
                     <p className="max-w-[40ch]">Experience what a personalized online presence can do for your business.</p>
                 </RevealOnScroll>
 
