@@ -52,7 +52,7 @@ const ContactForm:React.FC = () => {
           url: window.location.href,
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          data: data
+          data: {'form-name': 'Contact', ...data}
         //   data: encode({
         //     "form-name": formRef.current.getAttribute("name"),
         //     name: nameRef.current.value,
@@ -115,14 +115,14 @@ const ContactForm:React.FC = () => {
             className="
             row-start-4 md:col-start-7 md:col-end-13 md:row-start-2 md:row-span-5
             flex flex-col text-slate-950 p-8 bg-slate-400 bg-opacity-10 rounded-xl leading-relaxed"
-            name="Contact Form" 
+            name="Contact" 
             method="POST" 
             data-netlify="true" 
             data-netlify-honeypot="bot-field"
             ref={formRef}
         >
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-            <input type="hidden" name="form-name" value="Contact Form" />
+            <input type="hidden" name="form-name" value="Contact" />
             {/* <input type="hidden" name="project-type" value={`${state.pricingText}`} aria-label="Project type"/> */}
             <div hidden style={{display: 'none'}}>
             <label>
