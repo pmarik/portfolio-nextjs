@@ -19,10 +19,12 @@ const config: DefaultSeoProps = {
         description: 'Boost your business with enhanced web development and design solutions from Marik Tech.',
         images: [
             {
-                url: '',
-                alt: '',
+                url: 'https://marik.tech/marik-tech-og.jpg',
+                alt: 'View Marik Tech Portfolio',
                 type: 'image/jpg',
-                secureUrl: ''
+                width: 1200,
+                height: 600
+                // secureUrl: ''
             }
         ]
     }
