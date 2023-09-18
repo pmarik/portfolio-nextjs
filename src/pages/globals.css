@@ -175,7 +175,7 @@ body {
 .embla__dots {
   z-index: 1;
   bottom: 1.6rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,6 +229,9 @@ span.underline:hover{
 
 
 @media screen and (min-width: 768px){
+  .embla__dots{
+      margin-top: 5rem;
+  }
   .jagged-after::after{
     height: 30px;
   }

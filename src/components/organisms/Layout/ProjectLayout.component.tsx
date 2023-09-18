@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 import Image, { StaticImageData} from 'next/image'
 import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 
 export function ProjectLayout({
@@ -36,14 +36,6 @@ export function ProjectLayout({
                   layoutId={title}
                   animate={{scale:1}}
                   layout
-                  // transition={{
-                  //   layout: {
-                  //       duration: 0.3,
-                  //       type: 'spring',
-                  //   }
-                // }}
-                onLayoutAnimationStart={() => console.log('yo')}
-
               >
                 <motion.span
                     layout='preserve-aspect'
