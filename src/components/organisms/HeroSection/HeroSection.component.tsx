@@ -13,7 +13,7 @@ const HeroSection:React.FC = () => {
                 </h1>
                 
                 <p className="mt-5 text-center md:text-left leading-relaxed" >
-                    I work with innovators to create and enhance websites that amplify business growth
+                I empower brands with custom high-converting websites that are brand-accurate and user-friendly.
                 </p>
 
                 <div 
