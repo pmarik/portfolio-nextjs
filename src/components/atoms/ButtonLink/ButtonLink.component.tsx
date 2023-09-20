@@ -10,9 +10,9 @@ export const buttonVariants = cva(
             variant: {
                 default: "btn-animate after:border-r-white after:border-b-white border-white",
                 main: "btn-animate after:border-r-color-300 after:border-b-color-300 border-color-300 text-color-300",
-                whiteMain: "btn-animate-lg text-lg md:w-3/4 w-full mr-4 md:ml-4 after:border-r-color-500 after:border-r-2 after:border-b-2 border-2 after:border-b-color-500 border-color-500 text-color-500",
-                whiteMainLarge: "btn-animate-lg mx-6 md:mx-[unset] xl:px-24  md:text-xl lg:text-2xl after:border-r-color-500 after:border-r-[3px] after:border-b-[3px] border-[3px] after:border-b-color-500 border-color-500 text-color-500",
-                whiteMainSmall: "btn-animate-sm mx-16 md:mx-[unset] xl:px-10 xl:py-3 after:border-r-color-500 after:border-r-2 after:border-b-2 border-2 after:border-b-color-500 border-color-500 text-color-500"
+                whiteMain: "btn-animate-lg text-lg md:w-3/4 w-full mr-4 md:ml-4 after:border-r-color-400 after:border-r-2 after:border-b-2 border-2 after:border-b-color-400 border-color-400 text-color-400",
+                whiteMainLarge: "btn-animate-lg mx-6 md:mx-[unset] xl:px-24  md:text-xl lg:text-2xl after:border-r-color-400 after:border-r-[3px] after:border-b-[3px] border-[3px] after:border-b-color-400 border-color-400 text-color-400",
+                whiteMainSmall: "btn-animate-sm mx-16 md:mx-[unset] xl:px-10 xl:py-3 after:border-r-color-400 after:border-r-2 after:border-b-2 border-2 after:border-b-color-400 border-color-400 text-color-400"
             }
         },
         defaultVariants: {

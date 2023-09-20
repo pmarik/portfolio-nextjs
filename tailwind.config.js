@@ -10,7 +10,8 @@ module.exports = {
       colors: {
         'color-100': '#D5FDF5',
         'color-200': '#98FAE7',
-        'color-300': '#FF9900',
+        // 'color-300': '#FF9900',
+        'color-300': '#E28903',
         'color-400': '#D64D00',
         'color-500': '#DF8A0D',
         'color-600': '#186E5F',
