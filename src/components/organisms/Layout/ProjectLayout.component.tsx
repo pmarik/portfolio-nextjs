@@ -46,6 +46,8 @@ export function ProjectLayout({
                       className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 lg:pl-8 overflow-hidden "
                       width={1510}
                       height={924}
+                      quality={90}
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 30vw"
                   />
                 </motion.span>
               </motion.div>

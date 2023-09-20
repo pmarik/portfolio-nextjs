@@ -74,18 +74,6 @@ body {
   z-index:15;
 }
 
-.quote-graphic::after{
-  position: absolute;
-  content: '';
-  background-image: url('/svgs/quote-close.svg');
-  background-position-y:bottom;
-  width: 521px;
-  height: 556px;
-  bottom: 0;
-  right:0;
-  background-repeat: no-repeat;
-}
-
 .quote-start-graphic::before{
   position: absolute;
   content: '';
@@ -148,6 +136,70 @@ body {
     100% {transform: translateY(0);}
 }
 
+
+.loader {
+  position: relative;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 2.5rem;
+  width: 2.5rem; 
+}
+
+.loader::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.loader .animate .path{
+    stroke-dasharray: 1, 250;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite, rotate 3s infinite
+}
+
+.circular {
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-linecap: round;
+  stroke: #FFF;
+  transform-origin: 75px 75px
+}
+
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
 
 .embla {
   overflow: hidden;
@@ -251,6 +303,18 @@ span.underline:hover{
   
   .btn-animate-sm:hover::after{
     transform: scaleX(1.1) scaleY(1.1) translate(95%, 90%);
+  }
+
+  .quote-graphic::after{
+    position: absolute;
+    content: '';
+    background-image: url('/svgs/quote-close.svg');
+    background-position-y:bottom;
+    width: 521px;
+    height: 556px;
+    bottom: 0;
+    right:0;
+    background-repeat: no-repeat;
   }
 
 }
