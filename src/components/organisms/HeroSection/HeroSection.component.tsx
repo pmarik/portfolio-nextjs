@@ -12,7 +12,7 @@ const HeroSection:React.FC = () => {
                     Full-Stack Development & User-Centered Design
                 </h1>
                 
-                <p className="mt-5 text-center md:text-left leading-relaxed" >
+                <p className="mt-5 text-center md:text-left leading-relaxed max-w-[55ch]" >
                 I empower brands with custom high-converting websites that are brand-accurate and user-friendly.
                 </p>
 
@@ -43,9 +43,9 @@ const HeroSection:React.FC = () => {
                     alt="Marik Tech Hero Image"
                     fill={true}
                     priority
-                    quality={100}
+                    quality={80}
                     className="object-cover object-left-top text-focus-in"
-                    sizes="50vw"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 30vw"
                     // unoptimized
                 />
             </div>

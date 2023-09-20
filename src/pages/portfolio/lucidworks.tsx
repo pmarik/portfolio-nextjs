@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from '../_app'
 import { LayoutPortfolio } from '@/components/organisms/Layout'
-import projectImg from 'public/project-imgs/lucidworks-project.jpg'
+import projectImg from 'public/project-imgs/lucidworks-project-logo.jpg'
 import { ProjectLayout } from '@/components/organisms/Layout/ProjectLayout.component'
 
 const projectDetails = {
@@ -36,7 +36,7 @@ function Project<NextPageWithLayout>() {
                     <br/><br/>
                     I give Paul my highest recommendation. Hire him, and you’ll quickly find that Paul is a key component to your project’s success.
                   </q>
-                  <p className="relative z-10">Dustin Guericke
+                  <p className="relative z-10"><br/>Dustin Guericke
                     <br/>
                     Director of Product Documentation at Lucidworks
                   </p>

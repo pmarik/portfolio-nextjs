@@ -14,7 +14,7 @@ const ProjectsSection:React.FC = () => {
 
                 <MainProjectSlot
                     title='Lucidworks'
-                    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                    description='Revamp of Lucidworks documenation site. Interactive documentation built upon Gatsby.js sourced from asciidoc files and powered by internal tools from Lucidworks.'
                     link='/portfolio/lucidworks' 
                     img={lucidworksImg}
                     imgAlt='lucidworks image'
@@ -22,7 +22,7 @@ const ProjectsSection:React.FC = () => {
 
                 <MainProjectSlot
                     title="Trade Tracker"
-                    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                    description='Tracker Tracker is a project that aims to automate the tedious task of analyzing personal capital investments. Through interactive charts, notes, and habit-forming psychology, this project guides a user to steady consistency and performance in the markets'
                     link='/portfolio/trade-tracker'
                     img={tradetrackerImg}
                     imgAlt='trade tracker image'
@@ -30,7 +30,7 @@ const ProjectsSection:React.FC = () => {
 
                 <MainProjectSlot
                     title="Applecore"
-                    description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                    description='Ecommerce site for the innovative cord organizer. Blazing fast Gatsby site utilizing the headless Shopify API with powerful animations and engaging user-flow.'
                     link='/portfolio/applecore'
                     img={applecoreImg}
                     imgAlt='applecore image'

@@ -31,7 +31,7 @@ function Project<NextPageWithLayout>() {
                   <q className="max-w-[75ch] inline-block relative z-10">
                   I recently contracted Paul at Marik Tech for website development and was thoroughly impressed with his ability to take an idea and translate it into a visually appealing and dynamic website. Mr. Marik was able to combine functionality with simplicity, especially when it came to setting up a CMS so I could manage my site. He made it effortless to edit content! I am extremely happy with his work and appreciate his professional etiquette and diligence.
                   </q>
-                  <p className="relative z-10">Simon Roca
+                  <p className="relative z-10"><br/>Simon Roca
                     <br/>
                     Founder Neovida Wellness
                   </p>

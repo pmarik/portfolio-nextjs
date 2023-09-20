@@ -31,7 +31,7 @@ function Project<NextPageWithLayout>() {
                   <q className="max-w-[75ch] inline-block relative z-10">
                   Paul was quick to understand what my needs and priorities were. He was detail oriented and worked quickly to make the changes that I was looking for.
                   </q>
-                  <p className="relative z-10">Zach Lastrilla
+                  <p className="relative z-10"><br/>Zach Lastrilla
                     <br/>
                     Unaffiliated Productions
                   </p>

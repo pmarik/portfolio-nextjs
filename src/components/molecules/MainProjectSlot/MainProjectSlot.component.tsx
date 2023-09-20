@@ -4,8 +4,7 @@ import { StaticImageData } from "next/image"
 import Image from 'next/image'
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
-// import { motion, useInView, useAnimation } from 'framer-motion'
-import { LazyMotion, domAnimation, m, useInView, useAnimation } from 'framer-motion'
+import { motion, useInView, useAnimation } from 'framer-motion'
 
 
 type MainProjectSlotProps = {
@@ -41,9 +40,8 @@ const MainProjectSlot:React.FC<MainProjectSlotProps> = ({
     }, [isInView])
 
     return (
-        <LazyMotion features={domAnimation}>
 
-            <m.div 
+            <motion.div 
                 ref={ref} 
                 className="text-gray-950 grid grid-cols-1 md:grid-cols-6 mt-10 mb-10 md:mt-20 md:mb-40 md:grid-rows-[repeat(3,auto)]"
                 variants={{
@@ -65,9 +63,10 @@ const MainProjectSlot:React.FC<MainProjectSlotProps> = ({
                     alt={imgAlt}
                     className="row-start-3 md:col-end-7 md:col-start-4 md:row-start-1 md:row-end-5 md:pl-8 w-full cursor-pointer transform transition duration-200 hover:scale-[1.02]"
                     onClick={() => router.push(link)} 
+                    quality={95}
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 30vw"
                 />
-            </m.div>
-        </LazyMotion>
+            </motion.div>
     )
 }
 
