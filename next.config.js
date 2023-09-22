@@ -19,6 +19,10 @@ const nextConfig = {
             resourceQuery: { not: /url/ }, // exclude if *.svg?url
             use: ['@svgr/webpack'],
             },
+            {
+              test: /\.node$/,
+              use: "node-loader"
+            }
         )
 
         // Modify the file loader rule to ignore *.svg, since we have it handled now.
