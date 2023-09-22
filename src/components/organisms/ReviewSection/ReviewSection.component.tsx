@@ -50,7 +50,7 @@ const ReviewSection:React.FC = () => {
                             </div>
                             <div className="embla__slide pr-10">
                                 <q className="mb-10  max-w-prose">
-                                    Working with Marik Tech was a perfect, easy solution for my small business. I built my own shopify website but certain items were very difficult to customize in the end. Paul was able to quickly diagnose web errors and within hours perform fixes that would have taken a full week of my time to research and implement. Marik Tech&apos;s professional services and flexibility has allowed me to focus on what I do best at Daymaker Touring rather than wasting countless hours in the rabit hole.
+                                    Working with Marik Tech was a perfect, easy solution for my small business. Paul was able to quickly diagnose web errors and within hours perform fixes. Marik Tech&apos;s professional services and flexibility has allowed me to focus on what I do best at Daymaker Touring rather than wasting countless hours in the rabit hole.
                                 </q>
                                 <p className="font-bold">- Giray Dadali <br/>  Co-founder Daymaker Touring</p>
                             </div>

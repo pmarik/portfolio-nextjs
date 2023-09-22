@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react'
-import Link from "next/link"
+import { useRef, useState, useEffect } from 'react'
 import { useForm, SubmitHandler} from 'react-hook-form';
+import { useContactContext } from '@/contexts/contact-context';
 import axios from 'axios'
+import { useWindowSize } from '@/hooks/useWindowSize';
 import { buttonVariants } from "@/components/atoms/ButtonLink/ButtonLink.component"
 
 
@@ -28,15 +29,58 @@ const ContactForm:React.FC = () => {
     // const emailRef = useRef<HTMLInputElement>(null);
     // const messageRef = useRef<HTMLInputElement>(null);
 
-    
+    const { isContact } = useContactContext()
+
     const [feedbackMsg, setFeedbackMsg] = useState<string>('');
+    const [isLoading, setIsLoading] = useState(false)
     const formRef = useRef<HTMLFormElement>(null);
+    const firstInputRef = useRef<HTMLInputElement | null>(null);
 
     const {
         register,
         handleSubmit,
         formState: { errors },
       } = useForm<Inputs>();
+
+    const { ref, ...rest} = register('name')
+
+
+    /**
+    // Check window location if loading page externally to #contact will focus first input
+    // of contact form
+    // TODO: doesn't work when clicking "contact" on portfolio grid page, and then clicking another project img to direct to new page
+    **/
+    // useEffect(() => {
+    //     if(window.location.hash === "#contact") {
+    //         console.log({firstInputRef})
+    //         setTimeout(() => {
+    //             firstInputRef.current?.focus()
+    //         }, 1);
+    //     }
+    //  });
+
+
+    const size = useWindowSize();
+
+    useEffect(() => {
+        // console.log(`%c ${isContact}`, 'color:red')
+        const setContactFocus = () => {
+            if(size?.width > 900){
+                setTimeout(() => {
+                    firstInputRef.current?.focus()
+                }, 650);
+            } else {
+                setTimeout(() => {
+                    firstInputRef.current?.focus()
+                }, 700);
+            }
+        }
+
+        if( isContact ){
+            // console.log({firstInputRef})
+            setContactFocus();
+        } 
+    }, [isContact])
 
 
     // const encode = data => {
@@ -47,6 +91,8 @@ const ContactForm:React.FC = () => {
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         // event.preventDefault();
         //const form = formRef.current;
+
+        setIsLoading(true)
     
         const axiosOptions = {
           url: window.location.href,
@@ -61,12 +107,20 @@ const ContactForm:React.FC = () => {
         //   })
         }
           
-        console.log({axiosOptions})
+        // console.log({axiosOptions})
     
         axios(axiosOptions)
           .then(response => {
-              console.log({response})
+
+
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 1000)
+
+            // console.log({response})
               setFeedbackMsg("Form submitted successfully!");
+            //   setFeedbackMsg(<Loader/>)
+              
               formRef.current?.reset()
           })
           .catch(err => {
@@ -74,40 +128,6 @@ const ContactForm:React.FC = () => {
               console.log(err)
           })
     }
-
-
-
-
-    // const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    //     event.preventDefault();
-    //     //const form = formRef.current;
-    
-    //     const axiosOptions = {
-    //       url: window.location.href,
-    //       method: "POST",
-    //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //       data: data
-    //     //   data: encode({
-    //     //     "form-name": formRef.current.getAttribute("name"),
-    //     //     name: nameRef.current.value,
-    //     //     email: emailRef.current.value,
-    //     //     message: messageRef.current.value,
-    //     //   })
-    //     }
-          
-    //     console.log({axiosOptions})
-    
-    //     axios(axiosOptions)
-    //       .then(response => {
-    //           console.log({response})
-    //           setFeedbackMsg("Form submitted successfully!");
-    //           formRef.current.reset()
-    //       })
-    //       .catch(err => {
-    //           setFeedbackMsg("Form could not be submitted. Please refresh and try again.");
-    //           console.log(err)
-    //       })
-    // }
 
     return (
          <form 
@@ -134,18 +154,22 @@ const ContactForm:React.FC = () => {
             <label htmlFor={'name'}>
                     <span className="form-label-text text-white">Name</span>
                     <input 
-                        {...register('name', {required: true })}
+                        {...register('name', {required: true, minLength: 2 })}
                         placeholder="enter your name" 
                         aria-label="Enter Name"
-                        className={`w-full rounded p-2 mt-1 ${errors.name ? 'mb-[unset]' : 'mb-5 '} `}
+                        className={`w-full rounded p-2 mt-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-color-300 ${errors.name ? 'mb-[unset]' : 'mb-5 '} `}
+                        ref={(e) => {
+                            ref(e)
+                            firstInputRef.current = e
+                        }}
                     />
-                    {errors.name && <p className="text-red-600 mb-5">Last name is required.</p>}
+                    {errors.name && <p className="text-red-600 mb-5">Name is required</p>}
             </label>
 
             <label htmlFor={'email'}>
                     <span className="form-label-text text-white">Email</span>
                     <input 
-                        className={`w-full rounded p-2 mt-1 ${errors.email ? 'mb-[unset]' : 'mb-5 '} `}
+                        className={`w-full rounded p-2 mt-1  focus:outline focus:outline-2 focus:outline-color-300 ${errors.email ? 'mb-[unset]' : 'mb-5 '} `}
                         {...register('email', {required: true, pattern: {
                             value: /\S+@\S+\.\S+/,
                             message: "Entered value does not match email format"
@@ -163,12 +187,18 @@ const ContactForm:React.FC = () => {
                         {/* {state.pricingText && (<span className="pricing-text"> ({state.pricingText})</span>)} */}
                     </span>
                     <textarea
-                        className="mb-8 w-full p-2 rounded h-[200px] max-h-[250px]"
+                        className="mb-8 w-full p-2 rounded h-[200px] max-h-[250px]  focus:outline focus:outline-2 focus:outline-color-300 "
                         {...register('message', {required: true})}
                         placeholder="type your message" 
                         aria-label="Type Message"
                     />
             </label>
+
+            {/* {isLoading ? 
+                    <Loader />
+                :
+                    <button type="submit" className={buttonVariants({variant: 'default'})}>Send Message</button>
+            } */}
 
             <button type="submit" className={buttonVariants({variant: 'default'})}>Send Message</button>
 
@@ -176,6 +206,17 @@ const ContactForm:React.FC = () => {
 
         </form>
     )
+}
+
+
+function Loader() {
+    return (
+        <div className="animate loader">
+            <svg className="circular" viewBox="50 50 60 60">
+            <circle className="path" cx="75" cy="75" r="20" fill="none" strokeWidth="6" strokeMiterlimit="10" />
+            </svg>
+        </div>  
+        )
 }
 
 export default ContactForm
