@@ -12,10 +12,10 @@
 }
 
 
-/* html{
-  --scroll-behavior: smooth !important;
-  scroll-behavior: smooth !important;
-} */
+html{
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

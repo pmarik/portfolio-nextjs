@@ -97,10 +97,10 @@ const ProjectsGrid:React.FC = () => {
                         title={item.title}
                         whileHover={{scale: 1.02}}
                         onClick={() => router.push(item.destination)} 
-                        initial={{
-                            width: '100%'
-                        }} 
-                        className=" bg-white cursor-pointer "
+                        // initial={{
+                        //     width: '100%'
+                        // }} 
+                        className=" bg-white cursor-pointer w-[88vw] min-[410px]:w-full"
                         key={item.title}
                     >
                         <motion.span

@@ -1,15 +1,17 @@
 
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
-
+import { useContactContext } from "@/contexts/contact-context";
 
 const NavLinks:React.FC = () => {
 
+    const { setIsContact } = useContactContext()
     const currentRoute = usePathname();
 
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         // first prevent the default behavior
-        e.preventDefault();
+        // e.preventDefault();
+        
         // get the href and remove everything before the hash (#)
         const href = e.currentTarget.href;
         const targetId = href.replace(/.*\#/, "");
@@ -19,6 +21,8 @@ const NavLinks:React.FC = () => {
           behavior: "smooth",
           inline: "nearest"
         });
+
+        setIsContact(true)
       };
 
     
@@ -28,7 +32,8 @@ const NavLinks:React.FC = () => {
         <nav className="space-x-2 md:space-x-4 lg:space-x-12 text-lg">
             <Link href='/' className={currentRoute === "/" ? "border-b border-white": ""}>Home</Link>
             <Link href='/portfolio' className={matchRoute ? "border-b border-color-300": ""}>Portfolio</Link>
-            <a href='#contact' tabIndex={0} onClick={handleScroll}>Contact</a>
+            <a 
+            href='#contact' tabIndex={0} onClick={handleScroll}>Contact</a>
         </nav>
     )
 }
