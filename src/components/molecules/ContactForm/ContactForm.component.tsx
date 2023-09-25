@@ -63,23 +63,17 @@ const ContactForm:React.FC = () => {
     const size = useWindowSize();
 
     useEffect(() => {
-        // console.log(`%c ${isContact}`, 'color:red')
-        const setContactFocus = () => {
-            if(size?.width > 900){
-                setTimeout(() => {
-                    firstInputRef.current?.focus()
-                }, 650);
-            } else {
-                setTimeout(() => {
-                    firstInputRef.current?.focus()
-                }, 700);
-            }
+        let setContactFocus = undefined as any
+        if(isContact){
+            setContactFocus = size?.width > 900 ? setTimeout(() => {
+                firstInputRef.current?.focus()
+            }, 650) : setTimeout(() => {
+                firstInputRef.current?.focus()
+            }, 700)
         }
-
-        if( isContact ){
-            // console.log({firstInputRef})
-            setContactFocus();
-        } 
+        return () => {
+            clearTimeout(setContactFocus)
+        }
     }, [isContact])
 
 
@@ -93,12 +87,19 @@ const ContactForm:React.FC = () => {
         //const form = formRef.current;
 
         setIsLoading(true)
+
+        const access = {
+            'access_key': `${process.env.NEXT_PUBLIC_WEB3FORM_ACCESS_KEY}`
+        }
     
         const axiosOptions = {
-          url: window.location.href,
+          url: 'https://api.web3forms.com/submit',
           method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          data: {'form-name': 'Contact', ...data}
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          data: {...access, ...data}
         //   data: encode({
         //     "form-name": formRef.current.getAttribute("name"),
         //     name: nameRef.current.value,
@@ -113,11 +114,13 @@ const ContactForm:React.FC = () => {
           .then(response => {
 
 
-            setTimeout(() => {
-                setIsLoading(false)
-            }, 1000)
+            // setTimeout(() => {
+            //     setIsLoading(false)
+            // }, 1000)
 
-            // console.log({response})
+            console.log({response})
+
+
               setFeedbackMsg("Form submitted successfully!");
             //   setFeedbackMsg(<Loader/>)
               
@@ -137,12 +140,12 @@ const ContactForm:React.FC = () => {
             flex flex-col text-slate-950 p-8 bg-slate-400 bg-opacity-10 rounded-xl leading-relaxed"
             name="Contact" 
             method="POST" 
-            data-netlify="true" 
-            data-netlify-honeypot="bot-field"
             ref={formRef}
+            action="https://api.web3forms.com/submit"
         >
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-            <input type="hidden" name="form-name" value="Contact" />
+            {/* <input type="hidden" name="form-name" value="Contact" /> */}
+
             {/* <input type="hidden" name="project-type" value={`${state.pricingText}`} aria-label="Project type"/> */}
             <div hidden style={{display: 'none'}}>
             <label>
