@@ -1,7 +1,8 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from '../_app'
 import { LayoutPortfolio } from '@/components/organisms/Layout'
-import projectImg from 'public/project-imgs/lucidworks-project-logo.jpg'
+// import projectImg from 'public/project-imgs/lucidworks-project-logo.jpg'
+import projectImg from 'public/project-imgs/lucidworks-project-logo-transparent.png'
 import { ProjectLayout } from '@/components/organisms/Layout/ProjectLayout.component'
 
 const projectDetails = {
