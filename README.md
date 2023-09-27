@@ -2,7 +2,7 @@
 
 Showcase of recent work for [Marik Tech](https://www.marik.tech/) . Explore projects and refer to available services for hire.
 
-
+![Marik Tech - Software Engineer](https://github.com/pmarik/portfolio-nextjs/blob/main/public/marik-tech-og.jpg)
 
 ## Getting Started
 
