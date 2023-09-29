@@ -9,7 +9,7 @@ const projectDetails = {
   title: 'Unaffiliated Productions',
   description: 'Fast no-nonsense static site showcasing the full work of the Unaffiliated Productions team. Content and video forward.',
   link: 'https://unaffiliatedproductions.com',
-  tech: ['Node','css','javascript'],
+  tech: ['Node','CSS','Javascript'],
   nextProjectLink: '/portfolio/daymaker'
 }
 
@@ -25,7 +25,7 @@ function Project<NextPageWithLayout>() {
       nextProjectLink={projectDetails.nextProjectLink}
     >
        {/* <ReviewSection> */}
-            <section className="w-full relative quote-graphic jagged-before bg-slate-950 text-white mt-20 md:mt-40 px-6 md:px-10 lg:px-20 py-20 md:min-h-[650px]">
+            <section id="review"  className="w-full relative quote-graphic jagged-before bg-slate-950 text-white mt-20 md:mt-40 px-6 md:px-10 lg:px-20 py-20 md:min-h-[650px] max-w-maximum min-w-minimum">
                 <p className="text-xl text-color-300 mt-16 relative z-10 quote-start-graphic">About this project.</p>
                 <h2 className="text-2xl md:title-clamp mb-4 relative z-10">Client Review</h2>
                   <q className="max-w-[75ch] inline-block relative z-10">

@@ -27,10 +27,13 @@ module.exports = {
         'smudge': "url('/graphic-images/smudge.jpg')"
       },
       maxWidth: {
-        'maximum': '2500px'
+        'maximum': '2532px'
       },
       minWidth: {
         'minimum': '350px'
+      },
+      screens: {
+        xlg: '1920px'
       }
     },
   },

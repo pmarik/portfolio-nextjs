@@ -19,25 +19,25 @@ const ServicesSection:React.FC = () => {
                 <RevealOnScroll className='h-[200px] mb-24'>
                     <CodeIcon />
                     <h3 className="text-2xl mb-4 mt-2">Frontend Development</h3>
-                    <p className="max-w-[40ch]">Experience what a personalized online presence can do for your business.</p>
+                    <p className="max-w-[40ch]">Looking to create a new site, or improve the one you currently have? I will work with you to bring your ideas to life.</p>
                 </RevealOnScroll>
 
                 <RevealOnScroll className='h-[200px] mb-24'>
                     <ComputerIcon />
                     <h3 className="text-2xl mb-4 mt-2">Design and Identity</h3>
-                    <p className="max-w-[40ch]">Experience what a personalized online presence can do for your business.</p>
+                    <p className="max-w-[40ch]">Experience what a personalized online presence with a powerful brand identity can do for your business.</p>
                 </RevealOnScroll>
 
                 <RevealOnScroll className='h-[200px] mb-24'>
                     <LinkIcon />
                     <h3 className="text-2xl mb-4 mt-2">SEO and Accessibility</h3>
-                    <p className="max-w-[40ch]">Experience what a personalized online presence can do for your business.</p>
+                    <p className="max-w-[40ch]">Boost your website's search engine rankings and ensure inclusivity for all users using modern web standards.</p>
                 </RevealOnScroll>
 
                 <RevealOnScroll className='h-[200px] mb-24'>
                     <SettingsIcon />
                     <h3 className="text-2xl mb-4 mt-2">Performance and Speed</h3>
-                    <p className="max-w-[40ch]">Experience what a personalized online presence can do for your business.</p>
+                    <p className="max-w-[40ch]">Don't lose potential customers due to a slow website. Increase the load speed of your site to prevent users from leaving prematurely.</p>
                 </RevealOnScroll>
 
             </div>

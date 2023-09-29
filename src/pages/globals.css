@@ -87,6 +87,10 @@ body {
   z-index: -1;
 }
 
+.embla__prev:hover, .embla__next:hover{
+  filter: brightness(90%);
+}
+
 .picture-img-wrap{
   display: inline-block;
   vertical-align: top;
@@ -333,5 +337,21 @@ span.underline:hover{
   }
   .jagged-before::before, .jagged-after::after{
     background-size: unset;
+  }
+}
+
+@media screen and (min-width: 1620px){
+
+  body p, body a, body span, body q, body li{
+    line-height: 1;
+    font-size: 1.5rem;
+    font-size: clamp(1rem,1.2vw,1.5rem);
+  }
+}
+
+@media screen and (min-width: 1920px){
+  .max-w-maximum{
+    padding-left: 15% !important;
+    padding-right: 15% !important;
   }
 }
