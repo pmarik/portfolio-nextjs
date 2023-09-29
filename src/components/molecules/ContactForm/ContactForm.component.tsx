@@ -158,7 +158,7 @@ const ContactForm:React.FC = () => {
                     <span className="form-label-text text-white">Name</span>
                     <input 
                         {...register('name', {required: true, minLength: 2 })}
-                        placeholder="enter your name" 
+                        // placeholder="enter your name" 
                         aria-label="Enter Name"
                         className={`w-full rounded p-2 mt-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-color-300 ${errors.name ? 'mb-[unset]' : 'mb-5 '} `}
                         ref={(e) => {
@@ -178,7 +178,7 @@ const ContactForm:React.FC = () => {
                             message: "Entered value does not match email format"
                         }})} 
                         type="email"
-                        placeholder="enter your email" 
+                        // placeholder="enter your email" 
                         aria-label="Enter Email"
                     />
                     {errors.email && <p className="text-red-600 mb-5">Please enter a valid email address</p>}
@@ -192,7 +192,7 @@ const ContactForm:React.FC = () => {
                     <textarea
                         className="mb-8 w-full p-2 rounded h-[200px] max-h-[250px]  focus:outline focus:outline-2 focus:outline-color-300 "
                         {...register('message', {required: true})}
-                        placeholder="type your message" 
+                        // placeholder="type your message" 
                         aria-label="Type Message"
                     />
             </label>

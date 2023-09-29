@@ -1,7 +1,9 @@
-import React, { ReactNode, useEffect, useCallback } from 'react' 
-import useEmblaCarousel, {EmblaCarouselType} from 'embla-carousel-react'
+import React, { ReactNode, useCallback } from 'react' 
+import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
-import { DotButton, useDotButton } from './EmblaCarouselDotButton'
+import IconNext from '@/assets/next-arrow.svg'
+import IconPrev from '@/assets/previous-arrow.svg'
+// import { DotButton, useDotButton } from './EmblaCarouselDotButton'
 
 interface CarouselProps {
     children?: ReactNode | string
@@ -19,16 +21,24 @@ const Carousel:React.FC<CarouselProps> = ({
     //     }
     // }, [emblaApi])
 
-    const onButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
-        const { autoplay } = emblaApi.plugins()
-        if (!autoplay) return
-        if (autoplay.options.stopOnInteraction !== false) autoplay.stop()
-      }, [])
+    const scrollPrev = useCallback(() => {
+        if (emblaApi) emblaApi.scrollPrev()
+      }, [emblaApi])
     
-      const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
-        emblaApi,
-        onButtonClick
-      )
+      const scrollNext = useCallback(() => {
+        if (emblaApi) emblaApi.scrollNext()
+      }, [emblaApi])
+
+    // const onButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
+    //     const { autoplay } = emblaApi.plugins()
+    //     if (!autoplay) return
+    //     if (autoplay.options.stopOnInteraction !== false) autoplay.stop()
+    //   }, [])
+    
+    //   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
+    //     emblaApi,
+    //     onButtonClick
+    //   )
 
     return (
         <div className="embla">
@@ -38,7 +48,9 @@ const Carousel:React.FC<CarouselProps> = ({
                 </div>
             </div>
 
-            <div className="embla__dots">
+            <button className="embla__prev mr-4 mt-2" onClick={scrollPrev} title="Previous Slide"><IconPrev/></button>
+            <button className="embla__next" onClick={scrollNext} title="Next Slide"><IconNext/></button>
+            {/* <div className="embla__dots">
                 {scrollSnaps.map((_, index) => (
                 <DotButton
                     key={index}
@@ -49,7 +61,7 @@ const Carousel:React.FC<CarouselProps> = ({
                     aria-label='view carousel item button'
                 />
                 ))}
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -57,7 +57,7 @@ const MainProjectSlot:React.FC<MainProjectSlotProps> = ({
             >
                 <h2 className="text-2xl md:title-clamp row-start-1 mb-4 mt-8 col-start-1 col-end-3">{title}</h2>
                 <p className="leading-relaxed col-start-1 col-end-4 row-start-2 md:row-start-2 md:pr-8 lg:pr-24 mb-4">{description}</p>
-                <Link scroll={false} href={link} className="mt-8 md:mt-[unset] row-start-4 md:row-start-3 col-start-1 text-color-400 "><span className=" underline">View Project</span></Link>
+                <Link href={link} className="mt-8 md:mt-[unset] row-start-4 md:row-start-3 col-start-1 text-color-400 "><span className=" underline">View Project</span></Link>
                 {/* <div className="border-l border-color-400 z-10 h-[100px] md:h-[150px] grid-cols-1 row-start-4 mt-7 mb-5"/> */}
                 <Image
                     src={img}

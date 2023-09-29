@@ -6,7 +6,7 @@ import { ProjectLayout } from '@/components/organisms/Layout/ProjectLayout.compo
 
 const projectDetails = {
   title: 'Lucidworks',
-  description: 'Revamp of Lucidworks documenation site. Interactive documentation built upon Gatsby.js sourced from asciidoc files and powered by internal tools from Lucidworks.',
+  description: "Revamp of Lucidwork's documentation site. Interactive documentation built upon Gatsby.js sourced from asciidoc files and powered by internal tools from Lucidworks.",
   link: 'https://doc.lucidworks.com',
   tech: ['Gatsby.js','React','Styled Components','Radix UI'],
   nextProjectLink: '/portfolio/trade-tracker'
@@ -24,7 +24,7 @@ function Project<NextPageWithLayout>() {
       nextProjectLink={projectDetails.nextProjectLink}
     >
           {/* <ReviewSection> */}
-              <section className="w-full relative quote-graphic jagged-before bg-slate-950 text-white mt-20 md:mt-40 px-6 md:px-10 lg:px-20 py-20">
+              <section id="review" className="w-full relative quote-graphic jagged-before bg-slate-950 text-white mt-20 md:mt-40 px-6 md:px-10 lg:px-20 py-20 max-w-maximum min-w-minimum">
                 <p className="text-xl text-color-300 mt-16 relative z-10 quote-start-graphic">About this project.</p>
                 <h2 className="text-2xl md:title-clamp mb-4 relative z-10">Client Review</h2>
                   <q className="max-w-[75ch] inline-block relative z-10">
