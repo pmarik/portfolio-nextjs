@@ -31,13 +31,13 @@ const ServicesSection:React.FC = () => {
                 <RevealOnScroll className='h-[200px] mb-24'>
                     <LinkIcon />
                     <h3 className="text-2xl mb-4 mt-2">SEO and Accessibility</h3>
-                    <p className="max-w-[40ch]">Boost your website's search engine rankings and ensure inclusivity for all users using modern web standards.</p>
+                    <p className="max-w-[40ch]">Boost your website&apos;s search engine rankings and ensure inclusivity for all users using modern web standards.</p>
                 </RevealOnScroll>
 
                 <RevealOnScroll className='h-[200px] mb-24'>
                     <SettingsIcon />
                     <h3 className="text-2xl mb-4 mt-2">Performance and Speed</h3>
-                    <p className="max-w-[40ch]">Don't lose potential customers due to a slow website. Increase the load speed of your site to prevent users from leaving prematurely.</p>
+                    <p className="max-w-[40ch]">Don&apos;t lose potential customers due to a slow website. Increase the load speed of your site to prevent users from leaving prematurely.</p>
                 </RevealOnScroll>
 
             </div>
