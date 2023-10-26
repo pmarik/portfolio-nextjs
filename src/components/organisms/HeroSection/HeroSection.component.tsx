@@ -44,8 +44,10 @@ const HeroSection:React.FC = () => {
                     fill={true}
                     priority
                     quality={80}
-                    className="object-cover object-left-top text-focus-in"
+                    className="object-cover object-left-top transition-opacity opacity-0 duration-[500ms] "
                     sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 30vw"
+                    onLoadingComplete={(image) => image.classList.remove('opacity-0')}
+
                     // unoptimized
                 />
             </div>
