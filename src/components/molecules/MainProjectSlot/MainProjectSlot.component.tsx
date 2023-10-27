@@ -66,6 +66,7 @@ const MainProjectSlot:React.FC<MainProjectSlotProps> = ({
                     onClick={() => router.push(link)} 
                     quality={95}
                     sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 30vw"
+                    onLoadingComplete={(image) => image.classList.remove('opacity-0')}
                 />
              {/* </motion.div> */}
             </m.div>
