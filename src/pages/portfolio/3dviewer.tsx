@@ -8,7 +8,7 @@ import { ProjectLayout } from '@/components/organisms/Layout/ProjectLayout.compo
 const projectDetails = {
   title: '3D Viewer',
   description: '3D model viewing in your browser. This is a project to test out some of the capabilities of Three.js, a JavaScript framework for displaying 3D content on the web harnessing the power of WebGL',
-  link: 'https://3d-viewer-demo.netlify.com/',
+  link: 'https://3d-viewer-demo.netlify.app/',
   tech: ['Three.js','js','css'],
   nextProjectLink: '/portfolio/lucidworks'
 }

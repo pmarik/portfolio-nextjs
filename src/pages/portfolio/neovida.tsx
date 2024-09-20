@@ -8,7 +8,7 @@ import { ProjectLayout } from '@/components/organisms/Layout/ProjectLayout.compo
 const projectDetails = {
   title: 'Neovida',
   description: 'Shopify 2.0 custom theme build for speed and engagement. Coffee cherries never looked better. ',
-  link: 'https://www.neovidawellness.com/',
+  link: 'https://www.neovidawell.com/',
   tech: ['Shopify','Liquid','javascript'],
   nextProjectLink: '/portfolio/3dviewer'
 }
