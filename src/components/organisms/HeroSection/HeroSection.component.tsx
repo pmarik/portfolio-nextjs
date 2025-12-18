@@ -1,7 +1,7 @@
 import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
 import Image from 'next/image'
 import Orangebg from '@/assets/orange-jagged.svg'
-import heroImg from 'public/paul-hero-7.png'
+import heroImg from '/public/paul-hero-7.png'
 
 const HeroSection:React.FC = () => {
     return (

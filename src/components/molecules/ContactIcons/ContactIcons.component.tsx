@@ -19,10 +19,10 @@ const ContactIcons:React.FC = () => {
                     <a href='mailto:paul@marik.tech' className="ml-5">Email</a>
                 </li>
                 <li className="flex items-center mb-5"> 
-                    <div role="button" onClick={() => openInNewTab('https://www.linkedin.com/in/paul-marik-web-developer/')} className="rounded-full bg-white inline-block bg-opacity-10">
+                    <div role="button" onClick={() => openInNewTab('https://www.linkedin.com/in/paul-marik-software-engineer/')} className="rounded-full bg-white inline-block bg-opacity-10">
                         <IconLinkedIn />
                     </div>
-                    <a href="https://www.linkedin.com/in/paul-marik-web-developer/" target="_blank" className="ml-5">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/paul-marik-software-engineer/" target="_blank" className="ml-5">LinkedIn</a>
                 </li> 
                 <li className="flex items-center">              
                     <div role="button" onClick={() => openInNewTab('https://github.com/pmarik')} className="rounded-full bg-white inline-block bg-opacity-10">

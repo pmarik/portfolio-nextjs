@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from '../_app'
 import { LayoutPortfolio } from '@/components/organisms/Layout'
-import projectImg from 'public/project-imgs/trade-tracker-project-logo.jpg'
+import projectImg from '/public/project-imgs/trade-tracker-project-logo.jpg'
 import { ProjectLayout } from '@/components/organisms/Layout/ProjectLayout.component'
 
 // Change above projectImg and below projectDetails values

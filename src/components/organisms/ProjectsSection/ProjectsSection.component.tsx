@@ -1,8 +1,8 @@
 import MainProjectSlot from "@/components/molecules/MainProjectSlot/MainProjectSlot.component" 
 import ButtonLink from "@/components/atoms/ButtonLink/ButtonLink.component"
-import lucidworksImg from 'public/project-imgs/lucidworks-project.jpg'
-import tradetrackerImg from 'public/project-imgs/trade-tracker-project.jpg'
-import applecoreImg from 'public/project-imgs/applecore-project.jpg'
+import lucidworksImg from '/public/project-imgs/lucidworks-project.jpg'
+import tradetrackerImg from '/public/project-imgs/trade-tracker-project.jpg'
+import applecoreImg from '/public/project-imgs/applecore-project.jpg'
 
 
 const ProjectsSection:React.FC = () => {

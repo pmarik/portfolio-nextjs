@@ -37,7 +37,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
             url="http://www.marik.tech"
             sameAs={[
               'http://instagram.com/paul_marik',
-              'https://www.linkedin.com/in/paul-marik-web-developer/',
+              'https://www.linkedin.com/in/paul-marik-software-engineer/',
               'https://github.com/pmarik',
             ]}
           />
