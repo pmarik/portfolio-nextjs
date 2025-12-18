@@ -22,6 +22,8 @@ yarn dev
 pnpm dev
 ```
 
+Check newer versions of deps with ```npm outdated``` and ```npm update <package name> --save```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 

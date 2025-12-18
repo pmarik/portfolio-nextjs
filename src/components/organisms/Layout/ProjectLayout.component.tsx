@@ -55,6 +55,8 @@ export function ProjectLayout({
                       height={924}
                       quality={90}
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 40vw, 30vw"
+                      placeholder='blur'
+                      blurDataURL='public/project-imgs/blurred/lucid-blur.png' // attempting to use blurha.sh generated image 
                   />
                 </motion.span>
               </motion.div>
